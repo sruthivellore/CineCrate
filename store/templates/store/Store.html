@@ -1,0 +1,206 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/store.css' %}">
+<div class="container-fluid">
+    <div class="row">
+        <!-- Left Panel -->
+        <div class="col-md-3" style="border-right: 1px solid rgba(135, 62, 35, 0.3);">
+            <div class="filter-panel sticky-top cust-cont p-3 rounded">
+                
+                
+                <form method="GET" class="mb-3">
+                    <input type="hidden" name="tab" value="{{ request.GET.tab|default:'all' }}">
+                    <!-- Search Input -->
+                    <h5 class="filter-title mb-3 text-center">Search</h5>
+                    <input type="text" name="search" placeholder="Search" class="form-control fancy-select mb-3" value="{{ request.GET.search }}">
+
+                    <!-- Sort By -->
+                    <h5 class="filter-title mb-3 text-center">Sort</h5>
+                    <select name="sort_by" class="form-control fancy-select mb-3">
+                        <option value="">Sort</option>
+                        <option value="rating" {% if 'rating' == request.GET.sort_by %}selected{% endif %}>Sort by Rating</option>
+                        <option value="year" {% if 'year' == request.GET.sort_by %}selected{% endif %}>Sort by Year</option>
+                        <option value="title" {% if 'title' == request.GET.sort_by %}selected{% endif %}>Sort A-Z</option>
+                    </select>
+                    <h5 class="filter-title mb-3 text-center">Filters</h5>
+                    <!-- Genre Filter -->
+                    <select name="genre" class="form-control mb-3 fancy-select">
+                        <option value="">All Genres</option>
+                        {% for genre in genres %}
+                            <option value="{{ genre }}" {% if genre == request.GET.genre %}selected{% endif %}>{{ genre }}</option>
+                        {% endfor %}
+                    </select>
+        
+                    <!-- Year Filter -->
+                    <select name="year" class="form-control mb-3 fancy-select">
+                        <option value="">All Years</option>
+                        {% for year in years %}
+                            <option value="{{ year }}" {% if year == request.GET.year %}selected{% endif %}>{{ year }}</option>
+                        {% endfor %}
+                    </select>
+        
+                    <!-- Rating Range -->
+                    <div class="funky-slider mt-3 mb-4">
+                        <label for="ratingRange" class="form-label funky-label">
+                            Min Rating: <span id="ratingDisplay">{{ request.GET.rating|default:'5' }}</span>
+                        </label>
+                        <input type="range" class="form-range funky-range" min="0" max="10" step="0.5"
+                               id="ratingRange" name="rating"
+                               value="{{ request.GET.rating|default:'5' }}"
+                               oninput="document.getElementById('ratingDisplay').innerText = this.value">
+                    </div>
+
+                    <!-- Apply Button -->
+                    <button type="submit" class="btn btn-filter w-100 mb-4">  <i class="fa-solid fa-filter me-1"></i>  Apply</button>
+                    <a href="?tab={{ request.GET.tab|default:'all' }}" type="submit" class="btn btn-filter w-100"><i class="fa-solid fa-filter-circle-xmark"></i>  Clear</a>
+                </form>
+            </div>
+        </div>
+
+        <!-- Right Panel -->
+        <div class="col-md-9">
+            <!-- Tabs -->
+            <div class="sticky-top cust-cont" >
+                <ul class="nav nav-tabs mb-3 custom-tab-style">
+                    <li class="nav-item" ><a class="nav-link {% if request.GET.tab == 'all' or not request.GET.tab %}active{% endif %}" id="all-tab" href="?tab=all" >All</a></li>
+                    <li class="nav-item" ><a class="nav-link {% if request.GET.tab == 'top' %}active{% endif %}" href="?tab=top" id="top-tab"  >Top Rated</a></li>
+                    <li class="nav-item" ><a class="nav-link {% if request.GET.tab == 'latest' %}active{% endif %}"  id="latest-tab" href="?tab=latest" >Latest</a></li>
+                </ul>
+            </div>
+
+                <!-- Tab Content -->
+                <div class="tab-content">
+                    <div class="tab-pane fade {% if request.GET.tab == 'all' or not request.GET.tab %}show active{% endif %}" id="all-tab-pane" >
+                        <div class="row">
+                            {% for movie in page_obj %}
+                                <div class="col-md-3 mb-3"> 
+                                    <a href="{% url 'movie_detail' id=movie.id %}" style="text-decoration: none; color: inherit;">
+                                    <div class="card">
+                                        <img src="{{ movie.image }}" class="card-img-top" alt="Movie Poster">
+                                        <div class="card-body">
+                                            <h6 class="card-title text-center text-dark cust-spacing">{{ movie.title }}</h6>
+                                            <p class="card-text text-center text-muted small cust-spacing">
+                                                {{ movie.genre|join:", " }}
+                                            </p>
+                                            <p class="text-center text-muted small cust-spacing">
+                                                <span class="badge border border-warning text-dark bg-transparent">⭐ {{ movie.rating }}</span>
+                                                | {{ movie.releaseYear }}
+                                            </p>
+                                            <div class="text-center">
+                                                <a href="#" class="btn btn-filter btn-sm">Rent</a>
+                                            </div>
+                                        </div>
+                                    </div></a>
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <!-- Pagination -->
+                        <nav>
+                            <ul class="pagination justify-content-center">
+                                {% if page_obj.has_previous %}
+                                    <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}&{{ querystring }}">&laquo;</a></li>
+                                {% endif %}
+                                {% for num in page_obj.paginator.page_range %}
+                                    <li class="page-item {% if page_obj.number == num %}active{% endif %}">
+                                        <a class="page-link" href="?page={{ num }}&{{ querystring }}">{{ num }}</a>
+                                    </li>
+                                {% endfor %}
+                                {% if page_obj.has_next %}
+                                    <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}&{{ querystring }}">&raquo;</a></li>
+                                {% endif %}
+                            </ul>
+                        </nav>
+                    </div>
+                
+
+
+                <!-- Top & Latest Tabs -->
+                <div class="tab-pane fade {% if request.GET.tab == 'top'%}show active{% endif %}" id="top-tab-pane">
+                    <div class="row">
+                        {% for movie in top_movies %}
+                        <div class="col-md-3 mb-3"> 
+                            <a href="{% url 'movie_detail' id=movie.id %}" style="text-decoration: none; color: inherit;">
+                            <div class="card">
+                                <img src="{{ movie.image }}" class="card-img-top" alt="Movie Poster">
+                                <div class="card-body">
+                                    <h6 class="card-title text-center text-dark cust-spacing">{{ movie.title }}</h6>
+                                    <p class="card-text text-center text-muted small cust-spacing">
+                                        {{ movie.genre|join:", " }}
+                                    </p>
+                                    <p class="text-center text-muted small cust-spacing">
+                                        <span class="badge border border-warning text-dark bg-transparent">⭐ {{ movie.rating }}</span>
+                                        | {{ movie.releaseYear }}
+                                    </p>
+                                    <div class="text-center">
+                                        <a href="#" class="btn btn-filter btn-sm">Rent</a>
+                                    </div>
+                                </div>
+                            </div></a>
+                        </div>
+                    {% endfor %}
+                </div>
+                <!-- Pagination -->
+                <nav>
+                    <ul class="pagination justify-content-center">
+                        {% if top_movies.has_previous %}
+                            <li class="page-item"><a class="page-link" href="?page={{ top_movies.previous_page_number }}&{{ querystring }}">&laquo;</a></li>
+                        {% endif %}
+                        {% for num in top_movies.paginator.page_range %}
+                            <li class="page-item {% if top_movies.number == num %}active{% endif %}">
+                                <a class="page-link" href="?page={{ num }}&{{ querystring }}">{{ num }}</a>
+                            </li>
+                        {% endfor %}
+                        {% if top_movies.has_next %}
+                            <li class="page-item"><a class="page-link" href="?page={{ top_movies.next_page_number }}&{{ querystring }}">&raquo;</a></li>
+                        {% endif %}
+                    </ul>
+                </nav>
+                </div>
+
+                <div class="tab-pane fade {% if request.GET.tab == 'latest'%}show active{% endif %}" id="latest-tab-pane" >
+                    <div class="row">
+                        {% for movie in latest_movies %}
+                        <div class="col-md-3 mb-3"> 
+                            <a href="{% url 'movie_detail' id=movie.id %}" style="text-decoration: none; color: inherit;">
+                            <div class="card">
+                                <img src="{{ movie.image }}" class="card-img-top" alt="Movie Poster">
+                                <div class="card-body">
+                                    <h6 class="card-title text-center text-dark cust-spacing">{{ movie.title }}</h6>
+                                    <p class="card-text text-center text-muted small cust-spacing">
+                                        {{ movie.genre|join:", " }}
+                                    </p>
+                                    <p class="text-center text-muted small cust-spacing">
+                                        <span class="badge border border-warning text-dark bg-transparent">⭐ {{ movie.rating }}</span>
+                                        | {{ movie.releaseYear }}
+                                    </p>
+                                    <div class="text-center">
+                                        <a href="#" class="btn btn-filter btn-sm">Rent</a>
+                                    </div>
+                                </div>
+                            </div></a>
+                        </div>
+                    {% endfor %}
+                </div>
+                <!-- Pagination -->
+                <nav>
+                    <ul class="pagination justify-content-center">
+                        {% if latest_movies.has_previous %}
+                            <li class="page-item"><a class="page-link" href="?page={{ latest_movies.previous_page_number }}&{{ querystring }}">&laquo;</a></li>
+                        {% endif %}
+                        {% for num in latest_movies.paginator.page_range %}
+                            <li class="page-item {% if latest_movies.number == num %}active{% endif %}">
+                                <a class="page-link" href="?page={{ num }}&{{ querystring }}">{{ num }}</a>
+                            </li>
+                        {% endfor %}
+                        {% if latest_movies.has_next %}
+                            <li class="page-item"><a class="page-link" href="?page={{ latest_movies.next_page_number }}&{{ querystring }}">&raquo;</a></li>
+                        {% endif %}
+                    </ul>
+                </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

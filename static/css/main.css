@@ -1,0 +1,21 @@
+body{
+	background-color:#eeeee4;
+    
+}
+
+.bg-dark{
+	background-color: rgba(135,62,35) !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+
+}
+.navbar-brand{
+    font-size: 1.7rem!important;
+}
+.custom-btn {
+    border-radius: 15px; /* Round edges */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  }
+
+
+
+

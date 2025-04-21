@@ -1,0 +1,200 @@
+.details-container {
+    color: #2f1c15;
+    background-color:rgba(135, 62, 35, 0.1);
+    padding: 2rem;
+    border-radius: 20px;
+    max-width: 1550px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.movie-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #873e23;
+    text-align: center;
+    text-shadow: 1px 1px 4px rgba(135, 62, 35, 0.3);
+}
+
+.movie-title .year {
+    font-size: 1.5rem;
+    color: rgba(135, 62, 35, 0.7);
+}
+
+.fancy-poster {
+    max-height: 550px;
+    object-fit: contain;
+    border: 5px solid #fdf5f0;
+    border-radius: 20px;
+}
+
+.trailer-frame-wrapper {
+    width: 100%;
+    height: 550px;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(135, 62, 35, 0.2);
+}
+
+.trailer-frame-wrapper iframe {
+    width: 100%;
+    height: 100%;
+}
+.movie-details {
+    background-color:rgba(255, 255, 255, 0.692);
+    border: 5px solid rgba(135, 62, 35, 0.6);
+    font-size: 1.5rem;
+    padding: 2rem;
+    border-radius: 30px;
+    box-shadow: 0 12px 24px rgba(135, 62, 35, 0.1);
+    margin-top: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for the details box */
+.movie-details:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 32px rgba(135, 62, 35, 0.2);
+}
+
+h4 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #873e23;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 4px rgba(135, 62, 35, 0.3);
+}
+
+.movie-details p {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    color: #2f1c15;
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+.movie-details .genre-badge {
+    background-color: rgba(135, 62, 35, 0.1);
+    color: #873e23;
+    border: 1px solid rgba(135, 62, 35, 0.5);
+    margin-right: 5px;
+    padding: 0.4rem 0.7rem;
+    border-radius: 30px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hover effect for the genre badges */
+.movie-details .genre-badge:hover {
+    transform: scale(1.05);
+    background-color: rgba(135, 62, 35, 0.3);
+    cursor: pointer;
+}
+
+/* Button Styling */
+.btn-filter {
+    color: #fff;
+    background-color: rgba(135, 62, 35, 1);
+    border-radius: 30px;
+    border: 1px solid rgba(135, 62, 35, 1);
+    padding: 12px 24px;
+    font-weight: 500;
+    font-size: 16px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-block;
+    margin-top: 1.5rem;
+}
+
+.btn-filter:hover {
+    background-color: rgb(169, 115, 96);
+    box-shadow: 0px 4px 10px rgba(135, 62, 35, 0.2);
+    border: 1px solid rgba(135, 62, 35, 1);
+    cursor: pointer;
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-image: none !important;
+    background-color: transparent !important;
+    filter: invert(1);
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+#movieImagesCarousel {
+    max-height: 700px;  
+    overflow: hidden;   
+}
+
+.movie-gallery-img {
+    object-fit: contain;  
+    height: 100%;              
+}
+
+.cast-scroll-container {
+    white-space: nowrap;
+    justify-content: center;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #873e23 #f5f5f5;
+    padding-bottom: 10px;
+    padding-left: 5rem;
+}
+
+.cast-scroll-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.cast-scroll-container::-webkit-scrollbar-thumb {
+    background-color: #873e23;
+    border-radius: 4px;
+}
+
+.cast-thumb {
+    width: 150px;
+    height: 160px;
+    object-fit: contain;
+    border: 3px solid #040404;
+    transition: transform 0.3s ease;
+    background-color: #040404;
+    display: block;
+}
+
+.cast-thumb:hover {
+    transform: scale(1.1);
+}
+
+.cast-scroll-container > div {
+    width: 180px;
+    height: 200px;
+    flex: 0 0 auto;
+}
+
+
+/* For better responsiveness */
+@media (max-width: 768px) {
+    .movie-details {
+        padding: 1.5rem;
+    }
+
+    .movie-details h4 {
+        font-size: 1.8rem;
+    }
+
+    .movie-details p {
+        font-size: 1rem;
+    }
+
+    .genre-badge {
+        font-size: 1.2rem;
+        margin-bottom: 5px;
+    }
+}

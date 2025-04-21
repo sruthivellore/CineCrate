@@ -1,0 +1,644 @@
+[{
+    "id": 1,
+    "title": "Dawn of the Planet of the Apes",
+    "image": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQSg8rDI_uMRn6MRdnFHJipZskqHkuSVokubv6n2ltawv1ZoBxM",
+    "rating": 7.6,
+    "releaseYear": 2014,
+    "genre": ["Action", "Drama", "Sci-Fi"],
+    "cast": ["Andy Serkis", "Jason Clarke", "Gary Oldman", "Keri Russell", "Toby Kebbell", "Kodi Smit-McPhee"],
+    "director": "Matt Reeves",
+    "plot": "The fragile peace between apes and humans is threatened as mistrust and betrayal threaten to plunge both tribes into a war for dominance over the Earth.",
+    "trailer": "https://www.youtube.com/embed/DpSaTrW4leg"
+},
+
+{
+    "id": 2,
+    "title": "Gladiator",
+    "image": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQs-YZI3aHyJESOKYkD6iPFIhkNZfmvWSkQUNcxTFwza4uHbj6_",
+    "rating": 8.5,
+    "releaseYear": 2000,
+    "genre": ["Action", "Adventure"],
+    "cast": ["Russell Crowe", "Joaquin Phoenix", "Connie Nielsen", "Oliver Reed", "Derek Jacobi", "Djimon Hounsou", "Richard Harris"],
+    "director":"Ridley Scott",
+    "plot": "A former Roman General sets out to exact vengeance against the corrupt emperor who murdered his family and sent him into slavery.",
+    "trailer": "https://www.youtube.com/embed/P5ieIbInFpg"
+
+},
+{
+    "id": 3,
+    "title": "Beauty and the Beast",
+    "image": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR6DOT5aWDJCy12LY0FAVCXNetwe_UGJFlrSIm_h-W6ZT99kw9z",
+    "rating": 7.1,
+    "releaseYear": 2017,
+    "genre": ["Family", "Music"],
+    "cast": ["Emma Watson", "Dan Stevens", "Luke Evans", "Kevin Kline", "Josh Gad", "Ewan McGregor", "Stanley Tucci", "Audra McDonald", "Gugu Mbatha-Raw", "Ian McKellen", "Emma Thompson"],
+    "director": "Gary Trousdale, Kirk Wise",
+    "plot": "A brave, beautiful, and brilliant young woman is imprisoned by a beast in his castle. Despite her fears, she learns to see beyond the beast's hideous exterior and realize the gentle heart of the true prince within him.",
+    "trailer": "https://www.youtube.com/embed/mH1w7WutGOM"
+},
+{
+    "id": 4,
+    "title": "Alice in Wonderland",
+    "image": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ1rodXPhSCz6UQepPtYhMuBedU11yQRXT69JVRKzPyCrQjIg1t",
+    "rating": 6.4,
+    "releaseYear": 2010,
+    "genre": ["Animation", "Adventure", "Family"],
+    "cast": ["Mia Wasikowska", "Johnny Depp", "Anne Hathaway", "Helena Bonham Carter", "Crispin Glover", "Matt Lucas", "Michael Sheen", "Alan Rickman", "Stephen Fry", "Timothy Spall", "Barbara Windsor"],
+    "director": "Tim Burton",
+    "plot": "Nineteen-year-old Alice returns to the magical world from her childhood adventure, where she reunites with her old friends and learns of her true destiny: to end the Red Queen's reign of terror.",
+    "trailer": "https://www.youtube.com/embed/P_IVeP3i7B0"
+},
+{
+    "id": 5,
+    "title": "Venom: The Last Dance",
+    "image": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSBwSBm2FE9mb4RaotsyDa0zHC7N72ex7nTDNgNGGrI2TeCPLAd",
+    "rating": 6.0,
+    "releaseYear": 2024,
+    "genre": ["Action", "Sci-Fi"],
+    "cast": ["Tom Hardy", "Chiwetel Ejiofor", "Juno Temple", "Rhys Ifans", "Stephen Graham", "Peggy Lu", "Alanna Ubach", "Clark Backo", "Andy Serkis"],
+    "director": "Kelly Marcel",
+    "plot": "Eddie Brock and Venom must make a devastating decision as they're pursued by a mysterious military man and alien monsters from Venom's home world.",
+    "trailer": "https://www.youtube.com/embed/__2bjWbetsA"
+},
+{
+    "id": 6,
+    "title": "Harry Potter and the Sorcerer's Stone",
+    "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSO2jvionkpF099u5URo_qpPXcOqa5PJcTSuHcaDzb4I6aP7BDX",
+    "rating": 8.2,
+    "releaseYear": 2001,
+    "genre": ["Fantasy", "Adventure", "Family"],
+    "cast": ["Daniel Radcliffe", "Rupert Grint", "Emma Watson", "Richard Harris", "Maggie Smith", "Robbie Coltrane", "Alan Rickman", "Tom Felton", "Ian Hart"],
+    "director": "Chris Columbus",
+    "plot": "An orphaned boy enrolls in a school of wizardry, where he learns the truth about himself, his family and the terrible evil that haunts the magical world.",
+    "trailer": "https://www.youtube.com/embed/VyHV0BRtdxo"   
+},
+{
+    "id": 7,
+    "title": "District 9",
+    "image": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSCZlqmBzqQb-iC72EmKmdDdaKfNYN_XFJQ_yuvAddRiyPOodTc",
+    "rating": 8,
+    "releaseYear": 2009,
+    "genre": ["Action", "Sci-Fi", "Thriller"],
+    "cast": ["Sharlto Copley", "David James", "Jason Cope", "Nathalie Boltt", "Mandela Van Peebles", "Eugene Khumbanyiwa"],
+    "director": "Neill Blomkamp",
+    "plot": "In a future Earth in which aliens are isolated in a remote ghetto, a government agent finds himself banished there.",
+    "trailer": "https://www.youtube.com/embed/DyLUwOcR5pk"
+
+},
+{
+    "id": 8,
+    "title": "X-Men: Days of Future Past",
+    "image": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT2AM0j2h4jAvOlWHYq9arjGXr7swe7htRGrxlLKn47iw4Qr8-v",
+    "rating": 8.4,
+    "releaseYear": 2014,
+    "genre": ["Action", "Sci-Fi", "Thriller"],
+    "cast": ["Hugh Jackman", "James McAvoy", "Michael Fassbender", "Jennifer Lawrence", "Ellen Page", "Peter Dinklage", "Ian McKellen", "Patrick Stewart", "Halle Berry", "Anna Paquin"],
+    "director": "Bryan Singer",
+    "plot": "The X-Men send Wolverine to the past in a desperate effort to change history and prevent an event that results in doom for both humans and mutants.",
+    "trailer": "https://www.youtube.com/embed/pK2zYHWDZKo"
+
+},
+{
+    "id": 9,
+    "title": "The Last Samurai",
+    "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSBgYLHlMDDqai1h2nMoZomAGwwuPx7K564ukERGHOpPCCGHx4B",
+    "rating": 7.7,
+    "releaseYear": 2003,
+    "genre": ["Action", "Drama", "History"],
+    "cast": ["Tom Cruise", "Ken Watanabe", "Billy Connolly", "Tony Goldwyn", "Hiroyuki Sanada", "Chad Lindberg", "Shin Koyamada", "Togo Igawa", "Sung Kang"],
+    "director": "Edward Zwick",
+    "plot": "In 19th century Japan, Nathan Algren, a US army captain, is hired by the Japanese emperor to train his army in the modern warfare techniques. Captain Algren finds himself trapped in a struggle between two eras and two worlds.",
+    "trailer": "https://www.youtube.com/embed/T50_qHEOahQ"
+
+
+},
+{
+    "id": 10,
+    "title": "The Amazing Spider-Man 2",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBu2CpFO3EKrS2GzgpuZjDqyQRXUQ-LEw0dtS7WXY7cKZBqplr",
+    "rating": 7.3,
+    "releaseYear": 2014,
+    "genre": ["Action", "Adventure", "Fantasy"],
+    "cast": ["Andrew Garfield", "Emma Stone", "Jamie Foxx", "Dane DeHaan", "Sally Field", "Martin Sheen", "Paul Giamatti", "Chris Cooper"],
+    "director": "Marc Webb",
+    "plot": "When New York is put under siege by Oscorp, it is up to Spider-Man to save the city he swore to protect as well as his loved ones.",
+    "trailer": "https://www.youtube.com/embed/nbp3Ra3Yp74"
+
+
+},
+{
+    "id": 11,
+    "title": "Tangled",
+    "image": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTcW1JYR8K6kTK1IeeD9fEHEO25_ScXETH7YjUWzymZYSpZSI6o",
+    "rating": 7.9,
+    "releaseYear": 2010,
+    "genre": ["Family", "Music"],
+    "cast": ["Mandy Moore", "Zachary Levi", "Donna Murphy", "Ron Perlman", "M.C. Gainey", "Brad Garrett", "Jeffrey Tambor"],
+    "director": "Nathan Greno, Byron Howard",
+    "plot": "The magically long-haired Rapunzel has spent her entire life in a tower, but now that a runaway thief has stumbled upon her, she is about to discover the world for the first time, and who she really is.",
+    "trailer": "https://www.youtube.com/embed/2f516ZLyC6U"
+
+},
+{
+    "id": 12,
+    "title": "Rush",
+    "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRCuFp_OFssahumtBfJA-anQNPj4LU14SNFsqTaWv94rX-9N-zQ",
+    "rating": 8.3,
+    "releaseYear": 2013,
+    "genre": ["Animation", "Comedy", "Family"],
+    "cast": ["Chris Hemsworth", "Daniel Brühl", "Olivia Wilde", "Alexandre F. M. Dos Santos", "Pierfrancesco Favino", "Benno Fürmann", "Natalie Dormer"],
+    "director": "Ron Howard",
+    "plot": "James Hunt and Niki Lauda, two extremely skilled Formula One racers, have an intense rivalry with each other. However, it is their enmity that pushes them to their limits.",
+    "trailer": "https://www.youtube.com/embed/4XA73ni9eVs"
+
+},
+{
+    "id": 13,
+    "title": "Despicable Me 2",
+    "image": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ6TFIkIRP-lPe6emjvYc7ZrQ732rEJ-VF2-9olJQ5Rq-akab4W",
+    "rating": 7.6,
+    "releaseYear": 2013,
+    "genre": ["Animation", "Comedy", "Family"],
+    "cast": ["Steve Carell", "Kristen Wiig", "Benjamin Bratt", "Miranda Cosgrove", "Russell Brand", "Elijah Wood", "Ken Jeong"],
+    "director": "Pierre Coffin, Chris Renaud",
+    "plot": "When a new criminal comes to town, the Anti-Villain League decides to hire Gru in order to fight him off. While Gru initially refuses, he eventually agrees after his aide goes back to his evil ways.",
+    "trailer": "https://www.youtube.com/embed/TlbnGSMJQbQ"
+
+},
+{
+    "id": 14,
+    "title": "Kill Bill: Vol. 1",
+    "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQI1rZvLno7kxfnCDWUQwqLid7RMncsYZl7bDelGQzXt9cy4mwS",
+    "rating": 8.2,
+    "releaseYear": 2003,
+    "genre": ["Action", "Crime"],
+    "cast": ["Uma Thurman", "Lucy Liu", "David Carradine", "Daryl Hannah", "Michael Madsen", "Vivica A. Fox", "Julie Dreyfus"],
+    "director": "Quentin Tarantino",
+    "plot": "After waking from a four-year coma, a former assassin wreaks vengeance on the team of assassins who betrayed her.",
+    "trailer": "https://www.youtube.com/embed/7kSuas6mRpk"
+
+
+},
+{
+    "id": 15,
+    "title": "Life of Brian",
+    "image": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQtthRr2fUisW9N_D6_N1sszaqfonIyXQ_NEmKeSOU-GakS_gDM",
+    "rating": 8.9,
+    "releaseYear": 1972,
+    "genre": ["Comedy"],
+    "cast": ["Graham Chapman", "John Cleese", "Eric Idle", "Terry Gilliam", "Michael Palin", "Terry Jones", "Brian Blessed", "Carol Cleveland"],
+    "director": "Terry Jones",
+    "plot": "Born on the original Christmas in the stable next door to Jesus Christ, Brian of Nazareth spends his life being mistaken for a messiah.",
+    "trailer": "https://www.youtube.com/embed/GeKzBQnAq5I"
+
+
+},
+{
+    "id": 16,
+    "title": "How to Train Your Dragon",
+    "image": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSUC21-BCRcxV44RI65eC6U7ocLWPM7p9Olg9rg5p7lyB5DnAET",
+    "rating": 8.2,
+    "releaseYear": 2010,
+    "genre": ["Animation", "Adventure", "Family"],
+    "cast": ["Jay Baruchel", "Gerard Butler", "Craig Ferguson", "America Ferrera", "Jonah Hill", "Christopher Mintz-Plasse", "T.J. Miller", "Kristen Wiig", "Robin Atkin Downes"],
+    "director": "Chris Sanders, Dean DeBlois",
+    "plot": "As an ancient threat endangers both Vikings and dragons alike on the isle of Berk, the friendship between Hiccup, an inventive Viking, and Toothless, a Night Fury dragon, becomes the key to both species forging a new future together.",
+    "trailer": "https://www.youtube.com/embed/22w7z_lT6YM"
+
+},
+{
+    "id": 17,
+    "title": "La La Land",
+    "image": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSbmdSioWOwZXG307zcGDOrearK81fvK46XY_uO4Us865BIdMZo",
+    "rating": 7.8,
+    "releaseYear": 2016,
+    "genre": ["Comedy", "Drama", "Music"],
+    "cast": ["Ryan Gosling", "Emma Stone", "John Legend", "Rosemarie DeWitt", "J.K. Simmons", "Finn Wittrock", "Tom Everett Scott"],
+    "director": "Damien Chazelle",
+    "plot": "When Sebastian, a pianist, and Mia, an actress, follow their passion and achieve success in their respective fields, they find themselves torn between their love for each other and their careers.",
+    "trailer": "https://www.youtube.com/embed/lu4RHvouJH8"
+
+},
+{
+    "id": 18,
+    "title": "Avengers: End Game",
+    "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRdu2dZHOCaB3vRLOBzi0ZzFOLbdLQF7314Axn9Et8WbLbdjm-k",
+    "rating": 8.4,
+    "releaseYear": 2019,
+    "genre": ["Action", "Sci-Fi"],
+    "cast": ["Robert Downey Jr.", "Chris Evans", "Mark Ruffalo", "Chris Hemsworth", "Scarlett Johansson", "Jeremy Renner", "Don Cheadle", "Paul Rudd", "Brie Larson", "Karen Gillan", "Danai Gurira", "Benedict Wong", "Jon Favreau", "Sean Gunn", "Tessa Thompson", "Pom Klementieff", "Letitia Wright", "Sterling K. Brown", "Tom Holland", "Chadwick Boseman", "Chris Pratt", "Zoe Saldana", "Dave Bautista", "Elizabeth Olsen", "Anthony Mackie", "Sebastian Stan", "Paul Bettany", "Tom Hiddleston", "Samuel L. Jackson"],
+    "director": "Anthony Russo, Joe Russo",
+    "plot": "After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and restore balance to the universe.",
+    "trailer": "https://www.youtube.com/embed/TcMBFSGVi1c"
+
+},
+{
+    "id": 19,
+    "title": "Avatar",
+    "image": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcR8V_XG7WUnlpwQ_DYxMPdoYM-iMHV3jv3XrhzQ5j-6nLjYXJhf",
+    "rating": 7.9,
+    "releaseYear": 2009,
+    "genre": ["Action", "Sci-Fi"],
+    "cast": ["Sam Worthington", "Zoe Saldana", "Sigourney Weaver", "Stephen Lang", "Michelle Rodriguez", "Giovanni Ribisi", "Matt Gerald", "Giovanni Ribisi", "Wes Studi", "CCH Pounder", "Laz Alonso", "Dilip Rao", "Sean Anthony Moran", "Sam Worthington", "Zoe Saldana"],
+    "director": "James Cameron",
+    "plot": "A paraplegic Marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.",
+    "trailer": "https://www.youtube.com/embed/5PSNL1qE6VY"
+
+},
+{
+    "id": 20,
+    "title": "The Dark Knight",
+    "image": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTgjBIioTEBpNj91xBbVkH-nmAqdxXyFEs_3Jl7woEFpeloEAuH",
+    "rating": 9.0,
+    "releaseYear": 2008,
+    "genre": ["Action", "Crime", "Drama"],
+    "cast": ["Christian Bale", "Heath Ledger", "Aaron Eckhart", "Michael Caine", "Maggie Gyllenhaal", "Gary Oldman", "Morgan Freeman", "James Caan", "William Mapother", "Cillian Murphy"],
+    "director": "Christopher Nolan",
+    "plot": "A paraplegic Marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.",
+    "trailer": "https://www.youtube.com/embed/EXeTwQWrcwY"
+
+},
+{
+    "id": 21,
+    "title": "Inception",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbzUdjW8ldIn8fHvH2qJwnXz7ao719QSBjr_61f-S33yXAIGI1",
+    "rating": 8.8,
+    "releaseYear": 2010,
+    "genre": ["Action", "Adventure", "Sci-Fi"],
+    "cast": ["Leonardo DiCaprio", "Joseph Gordon-Levitt", "Elliot Page", "Tom Hardy", "Ken Watanabe", "Cillian Murphy", "Marion Cotillard", "Michael Caine", "Tom Berenger", "Lukas Haas"],
+    "director": "Christopher Nolan",
+    "plot": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O., but his tragic past may doom the project and his team to disaster.",
+    "trailer": "https://www.youtube.com/embed/YoHD9XEInc0"
+
+},
+{
+    "id": 22,
+    "title": "Interstellar",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSRQxlaMCyPCYft6InTmHbBtIUbVMjI1iqBF8ogunxrVK2d5n4",
+    "rating": 8.6,
+    "releaseYear": 2014,
+    "genre": ["Adventure", "Drama", "Sci-Fi"],
+    "cast": ["Matthew McConaughey", "Anne Hathaway", "Jessica Chastain", "Bill Irwin", "Topher Grace", "Ellen Burstyn", "Michael Caine", "Casey Affleck", "John Lithgow", "Matt Damon"],
+    "director": "Christopher Nolan",
+    "plot": "When Earth becomes uninhabitable in the future, a farmer and ex-NASA pilot, Joseph Cooper, is tasked to pilot a spacecraft, along with a team of researchers, to find a new planet for humans.",
+    "trailer": "https://www.youtube.com/embed/zSWdZVtXT7E"
+
+},
+{
+    "id": 23,
+    "title": "Casablanca",
+    "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRxmLn7NWN4BGBhwfUS5VkfwtqTmZnxC6LX_GNQLkJKgKieFnsi",
+    "rating": 8.5,
+    "releaseYear": 1942,
+    "genre": ["Romance", "War"],
+    "cast": ["Humphrey Bogart", "Ingrid Bergman", "Paul Henreid", "Claude Rains", "Conrad Veidt", "Sydney Greenstreet", "Peter Lorre", "Dooley Wilson"],
+    "director": "Michael Curtiz",
+    "plot": "A cynical expatriate American cafe owner struggles to decide whether or not to help his former lover and her fugitive husband escape the Nazis in French Morocco.",
+    "trailer": "https://www.youtube.com/embed/BkL9l7qovsE"
+
+
+},
+{
+    "id": 24,
+    "title": "John Wick: Chapter 2",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrJtYP9FgqgXtRrZZJUY89GQulJIXaYPUcTTCTdPOtEwOiVnjh",
+    "rating": 7.4,
+    "releaseYear": 2017,
+    "genre": ["Action", "Crime", "Thriller"],
+    "cast": ["Keanu Reeves", "Riccardo Scamarcio", "Ian McShane", "Ruby Rose", "Common", "Laurence Fishburne", "John Leguizamo", "Lance Reddick"],
+    "director": "Chad Stahelski",
+    "plot": "After returning to the criminal underworld to repay a debt, John Wick discovers that a large bounty has been put on his life.",
+    "trailer": "https://www.youtube.com/embed/XGk2EfbD_Ps"
+
+},
+{
+    "id": 25,
+    "title": "Logan",
+    "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRLqupfOvC_hCQ2o_yzAD8UcArj3wbA38HNMeGl9dQNF3DdFgR5",
+    "rating": 8.1,
+    "releaseYear": 2017,
+    "genre": ["Action", "Drama", "Sci-Fi"],
+    "cast": ["Hugh Jackman", "Patrick Stewart", "Dafne Keen", "Boyd Holbrook", "Stephen Merchant", "Richard E. Grant", "Eriq La Salle", "Elizabeth Rodriguez"],
+    "director": "James Mangold",
+    "plot": "In a future where mutants are nearly extinct, an elderly and weary Logan leads a quiet life. But when Laura, a mutant child pursued by scientists, comes to him for help, he must get her to safety.",
+    "trailer": "https://www.youtube.com/embed/Div0iP65aZo"
+
+},
+{
+    "id": 26,
+    "title": "Elle",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStcBWvqYn74hdOqwxVR2PbYzWBcAQlqnawnld2ClhiH0XYGWJ7",
+    "rating": 7.1,
+    "releaseYear": 2016,
+    "genre": ["Crime", "Drama", "Thriller"],
+    "cast": ["Isabelle Huppert", "Laurent Lafitte", "Anne Consigny", "Charles Berling", "Virginie Efira", "Alice Isaaz", "Jonas Bloquet", "Christian Berkel"],
+    "director": "Paul Verhoeven",
+    "plot":"A successful businesswoman gets caught up in a game of cat and mouse as she tracks down the unknown man who raped her." ,
+    "trailer": "https://www.youtube.com/embed/gM96ne-XiH0"
+
+
+},
+{
+    "id": 27,
+    "title": "Baywatch",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9TWwmKnLEAycVw1bBW8F7XITZ3M0xv7oBq2Q9ICcgjR8JZjhk",
+    "rating": 5.5,
+    "releaseYear": 2017,
+    "genre": ["Animation", "Adventure", "Family"],
+    "cast": ["Dwayne Johnson", "Zac Efron", "Alexandra Daddario", "Priyanka Chopra", "Jon Bass", "Kelly Rohrbach", "Ilfenesh Hadera", "Hannibal Buress", "Rob Huebel", "David Hasselhoff", "Pamela Anderson"],
+    "director": "Seth Gordon",
+    "plot": "Devoted lifeguard Mitch Buchannon butts heads with a brash new recruit, as they uncover a criminal plot that threatens the future of the bay.",
+    "trailer":  "https://www.youtube.com/embed/eyKOgnaf0BU"
+
+},
+{
+    "id": 28,
+    "title": "City Lights",
+    "image": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQZa_Hxaq1g7bM-j6x1uSq0GFI8t476c9FnktSkpUdahZBhu1o3",
+    "rating": 8.5,
+    "releaseYear": 1931,
+    "genre": ["Comedy", "Drama", "Romance"],
+    "cast": ["Charlie Chaplin", "Virginia Cherill", "Florence Lee", "Harry Myers", "Al Ernest Garcia", "Charles Lane"],
+    "director": "Charlie Chaplin",
+    "plot": "With the aid of a wealthy erratic tippler, a dewy-eyed tramp who has fallen in love with a sightless flower girl accumulates money to be able to help her medically." ,
+    "trailer": "https://www.youtube.com/embed/7vl7F8S4cpQ"
+
+},
+{
+    "id": 29,
+    "title": "The Godfather",
+    "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcS94moPdxC2K-oKYn6Ab4tFd4avSGDhObohCX9yGys_K43cpdtP",
+    "rating": 9.2,
+    "releaseYear": 1972,
+    "genre": ["Crime", "Drama"],
+    "cast": ["Marlon Brando", "Al Pacino", "James Caan", "Richard S. Castellano", "Sterling Hayden", "Marlon Brando", "John Marley", "Richard Conte", "Diane Keaton", "Al Lettieri", "Gianni Russo"],
+    "director": "Francis Ford Coppola",
+    "plot": "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",
+    "trailer": "https://www.youtube.com/embed/1x0GpEZnwa8"
+
+},
+{
+    "id": 30,
+    "title": "The Wild Robot",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSIblAmx5iw7vNkh9BzncAiBRFzz7PHSPxOUykxS2tTSFbt5tw",
+    "rating": 8.2,
+    "releaseYear": 2024,
+    "genre": ["Animation", "Sci-Fi"],
+    "cast": ["Kit Connor", "Pedro Pascal", "Mark Hamill", "Matt berry", "Bill Nighy", "Stephanie Hsu"],
+    "director": "Chris Sanders",
+    "plot": "After a shipwreck, an intelligent robot called Roz is stranded on an uninhabited island. To survive the harsh environment, Roz bonds with the island's animals and cares for an orphaned baby goose.",
+    "trailer": "https://www.youtube.com/embed/67vbA5ZJdKQ"
+
+},
+{
+    "id": 31,
+    "title": "Doctor Strange",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXO_x0Cl779BQ-uxmHopDhyKcYilNvLAfHUisymFFtlEQyGPtQ",
+    "rating": 7.5,
+    "releaseYear": 2016,
+    "genre": ["Fantasy", "Action"],
+    "cast": ["Benedict Cumberbatch", "Chiwetel Ejiofor", "Rachel McAdams", "Benedict Wong", "Mads Mikkelsen", "Tilda Swinton", "Michael Stuhlbarg", "Benjamin Bratt"],
+    "director": "Scott Derrickson",
+    "plot": "While on a journey of physical and spiritual healing, a brilliant neurosurgeon is drawn into the world of the mystic arts.",
+    "trailer": "https://www.youtube.com/embed/HSzx-zryEgM"
+},
+{
+    "id": 32,
+    "title": "Nyad",
+    "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTUkHgGgDKOsAFGR05XzIbZIzz1BLZ4d4ssZ_IbRaxhdOdZ5K7x",
+    "rating": 7.1,
+    "releaseYear": 2023,
+    "genre": ["Biography", "Drama","Sport"],
+    "cast": ["Annette Bening", "Jodie Foster", "Rhys Ifans", "Karly Rothenberg", "Jeena Yi", "Luke Cosgrove", "Eric T. Miller", "Garland Scott"],
+    "director": "Elizabeth Chai Vasarhelyi, Jimmy Chin",
+    "plot": "The remarkable true story of athlete Diana Nyad who, at the age of 60 and with the help of her best friend and coach, commits to achieving her life-long dream: a 110-mile open ocean swim from Cuba to Florida.",
+    "trailer": "https://www.youtube.com/embed/z2WU0BK4DM4"
+},
+{
+    "id": 33,
+    "title": "Oppenheimer",
+    "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcT2Ha1ZTueql0jsRnHOlOvRWCqEyFyXSCtou8nDQ4GQpcr7hl7i",
+    "rating": 8.3,
+    "releaseYear": 2023,
+    "genre": ["Biography", "Drama", "History"],
+    "cast": ["Cillian Murphy", "Emily Blunt", "Matt Damon", "Robert Downey Jr.", "Florence Pugh", "Josh Hartnett", "Casey Affleck", "Rami Malek", "Kenneth Branagh", "Benny Safdie", "Jason Clarke", "Dylan Arnold", "Gustaf Skarsgård", "David Krumholtz", "Matthew Modine", "Tom Conti", "David Dastmalchian", "Michael Angarano", "Jack Quaid", "Josh Peck", "Olivia Thirlby", "Dane DeHaan", "Danny Deferrari", "Alden Ehrenreich", "Scott Grimes", "Jefferson Hall", "James D’Arcy", "Tony Goldwyn", "Devon Bostick", "Alex Wolff", "Josh Zuckerman", "Matthias Schweighöfer", "Christopher Denham", "David Rysdahl", "Guy Burnet", "Louise Lombard", "Harrison Gilbertson", "Emma Dumont", "Trond Fausa Aurvåg", "Olli Haaskivi", "Gary Oldman", "Macon Blair", "Harry Groener", "Jack Cutmore-Scott", "James Remar", "Gregory Jbara", "Tim DeKay", "James Urbaniak", "Tom Jenkins", "John Gowans", "Will Roberts", "Máté Haumann", "Hap Lawrence", "Pat Skipper", "Ted King"],
+    "director": "Christopher Nolan",
+    "plot": "A dramatization of the life story of J. Robert Oppenheimer, the physicist who had a large hand in the development of the atomic bombs that brought an end to World War II.",
+    "trailer": "https://www.youtube.com/embed/uYPbbksJxIg"
+
+},
+{
+    "id": 34,
+    "title": "The Flash",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV0ih-rupw7VlBkmRjcEpBSzkauTPnXYR_-goCzObbo0PVQbEP",
+    "rating": 6.9,
+    "releaseYear": 2023,
+    "genre": ["Action", "Adventure", "Fantasy"],
+    "cast": ["Ezra Miller", "Michael Keaton", "Sasha Calle", "Michael Shannon", "Ron Livingston", "Maribel Verdú", "Kiersey Clemons", "Antje Traue", "Ben Affleck", "Jeremy Irons", "Gal Gadot", "Temuera Morrison", "Rudy Mancuso", "Saoirse-Monica Jackson", "Sanjeev Bhaskar", "Luke Brandon Field", "George Clooney", "Jason Momoa"],
+    "director": "Andy Muschietti",
+    "plot": "Barry Allen uses his super speed to change the past, but his attempt to save his family creates a world without super heroes, forcing him to race for his life in order to save the future.",
+    "trailer": "https://www.youtube.com/embed/hebWYacbdvc"
+},
+{
+    "id": 35,
+    "title": "Barbie",
+    "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQCRv37lCSm98PXKhFmkzHcg9vtE0s8JrhprhETVTPigPZKNAbn",
+    "rating": 6.8,
+    "releaseYear": 2023,
+    "genre": ["Comedy", "Adventure", "Fantasy"],
+    "cast": ["Margot Robbie", "Ryan Gosling", "America Ferrera", "Kate McKinnon", "Issa Rae", "Rhea Perlman", "Will Ferrell", "Michael Cera", "Ariana Greenblatt", "Simu Liu", "Ncuti Gatwa", "Scott Evans", "John Cena", "Kingsley Ben-Adir", "Hari Nef", "Alexandra Shipp", "Emma Mackey", "Ana Cruz Kayne", "Sharon Rooney", "Nicola Coughlan", "Ritu Arya", "Dua Lipa", "Helen Mirren"],
+    "director": "Greta Gerwig",
+    "plot": "Barbie and Ken are having the time of their lives in the seemingly perfect world of Barbie Land. However, when they get a chance to go to the outside world, they soon discover the joys and perils of living among regular humans.",
+    "trailer": "https://www.youtube.com/embed/pBk4NYhWNMM"
+},
+{
+    "id": 36,
+    "title": "Aftersun",
+    "image": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQapqpYHSMeaxUlTrgnO8rzaEMM2atn-b4uOj12nK3Bhnw0S12x",
+    "rating": 8.2,
+    "releaseYear": 2022,
+    "genre": ["Drama"],
+    "cast": ["Paul Mescal", "Frankie Corio", "Celia Rowlson-Hall", "Brooklyn Toulson", "Sally Messham", "Spike Fearn", "Harry Perdios", "Ruby Thompson", "Ethan James Smith", "Kayleigh Coleman"],
+    "director": "Charlotte Wells",
+    "plot": "Sophie reflects on the shared joy and private melancholy of a holiday she took with her father twenty years earlier. Memories real and imagined fill the gaps between as she tries to reconcile the father she knew with the man she didn't.",
+    "trailer": "https://www.youtube.com/embed/G9jOaggGPKQ"
+},
+{
+    "id": 37,
+    "title": "RRR",
+    "image": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQvgDcYi5ux-HI__DXXFScylyswVeu0DfMC7owmTYfei9kOtZP2",
+    "rating": 7.8,
+    "releaseYear": 2022,
+    "genre": ["Drama"],
+    "cast": ["N. T. Rama Rao Jr.", "Ram Charan", "Ajay Devgn", "Alia Bhatt", "Shriya Saran", "Samuthirakani", "Ray Stevenson", "Alison Doody", "Olivia Morris"],
+    "director": "S. S. Rajamouli",
+    "plot": "A fearless warrior on a perilous mission comes face to face with a steely cop serving British forces in this epic saga set in pre-independent India.",
+    "trailer": "https://www.youtube.com/embed/GY4BgdUSpbE"
+
+},
+{
+    "id": 38,
+    "title": "Dune: Part One",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCODWBFeUE0AA2SaLAWKDroXcivtf175Rs52ih5A8JPrSuHweu",
+    "rating": 8.0,
+    "releaseYear": 2021,
+    "genre": ["Action", "Adventure", "Drama"],
+    "cast": ["Timothée Chalamet", "Rebecca Ferguson", "Oscar Isaac", "Josh Brolin", "Stellan Skarsgård", "Dave Bautista", "Stephen McKinley Henderson", "Zendaya", "Chang Chen", "Sharon Duncan-Brewster", "Charlotte Rampling", "Jason Momoa", "Javier Bardem"],
+    "director": "Denis Villeneuve",
+    "plot": "Paul Atreides arrives on Arrakis after his father accepts the stewardship of the dangerous planet. However, chaos ensues after a betrayal as forces clash to control melange, a precious resource.",
+    "trailer": "https://www.youtube.com/embed/8g18jFHCLXk"
+},
+{
+    "id": 39,
+    "title": "Little Women",
+    "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRTY81EZJyUt_LG2eGsyVfbX8i0Qosj3B3gHb3Htci5c5MR3iTo",
+    "rating": 8.2,
+    "releaseYear": 2019,
+    "genre": ["Drama", "Romance"],
+    "cast": ["Saoirse Ronan", "Emma Watson", "Florence Pugh", "Eliza Scanlen", "Laura Dern", "Timothée Chalamet", "Meryl Streep", "Tracy Letts", "Bob Odenkirk", "James Norton", "Louis Garrel", "Chris Cooper"],
+    "director": "Greta Gerwig",
+    "plot": "19th century Massachusetts. While the March sisters - Jo, Meg, Amy, and Beth - enter the threshold of womanhood, they go through many ups and downs in life and endeavor to make important decisions that can affect their future.",
+    "trailer": "https://www.youtube.com/embed/AST2-4db4ic"
+},
+
+{
+    "id": 40,
+    "title": "The Lion King",
+    "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTAaxbfd8Mp6ggTcp4iTvQDBQw1JwkiJWaMVFqfczV9VPLd9Fvp",
+    "rating": 6.9,
+    "releaseYear": 2019,
+    "genre": ["Animation", "Adventure", "Drama"],
+    "cast": ["Donald Glover", "Seth Rogen", "Chiwetel Ejiofor", "Alfre Woodard", "Billy Eichner", "John Kani", "John Oliver", "Beyoncé Knowles-Carter", "James Earl Jones"],
+    "director": "Jon Favreau",
+    "plot": "After the murder of his father, a young lion prince flees his kingdom only to learn the true meaning of responsibility and bravery.",
+    "trailer": "https://www.youtube.com/embed/7TavVZMewpY"
+},
+{
+    "id": 41,
+    "title": "The Irishman",
+    "image": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQ7PzQotmHujkuMfZz8dHacJIhA4T7r4lCyriu_FWATtkyRX3Zj",
+    "rating": 7.0,
+    "releaseYear": 2019,
+    "genre": ["Biography", "Crime", "Drama"],
+    "cast": ["Robert De Niro", "Al Pacino", "Joe Pesci", "Harvey Keitel", "Anna Paquin", "Ray Romano", "Stephen Graham", "Bobby Cannavale"],
+    "director": "Martin Scorsese",
+    "plot": "An illustration of Frank Sheeran's life, from W.W.II veteran to hit-man for the Bufalino crime family and his alleged assassination of his close friend Jimmy Hoffa.",
+    "trailer": "https://www.youtube.com/embed/WHXxVmeGQUc"
+
+},
+{
+    "id": 42,
+    "title": "1917",
+    "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRHJAoBbiUl0jyyekcjEKXt8hkX8pwblNuJYPkFXlmDW4hYiu8t",
+    "rating": 8.2,
+    "releaseYear": 2019,
+    "genre": ["Action", "Drama", "War"],
+    "cast": ["George MacKay", "Dean-Charles Chapman", "Mark Strong", "Andrew Scott", "Richard Madden", "Colin Firth", "Benedict Cumberbatch"],
+    "director": "Sam Mendes",
+    "plot": "April 6th, 1917. As an infantry battalion assembles to wage war deep in enemy territory, two soldiers are assigned to race against time and deliver a message that will stop 1,600 men from walking straight into a deadly trap.",
+    "trailer": "https://www.youtube.com/embed/YqNYrYUiMfg"
+},
+{
+    "id": 43,
+    "title": "Parasite",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiVlo98fmwHYW98u9IjfWuBGI_v9da9XjlCdC782imX5iAqx-n",
+    "rating": 8.5,
+    "releaseYear": 2019,
+    "genre": ["Drama", "Thriller"],
+    "cast": ["Song Kang-ho", "Lee Sun-kyun", "Cho Yeo-jeong", "Choi Woo-shik", "Park So-dam", "Jang Hye-jin", "Lee Jung-eun", "Park Myung-hoon", "Jung Ji-so", "Jung Hyeon-jun", "Park Keun-rok", "Park Seo-joon", "Jung Yi-seo"],
+    "director": "Bong Joon Ho",
+    "plot": "Greed and class discrimination threaten the newly formed symbiotic relationship between the wealthy Park family and the destitute Kim clan.",
+    "trailer": "https://www.youtube.com/embed/5xH0HfJHsaY"
+},
+{
+    "id": 44,
+    "title": "Joker",
+    "image": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSgowf6eZbZ2C3Vwt7E0TPPawFFyEnA7PSMFYYSXX0kYjHQY-SK",
+    "rating": 8.4,
+    "releaseYear": 2019,
+    "genre": ["Crime", "Drama", "Thriller"],
+    "cast": ["Joaquin Phoenix", "Robert De Niro", "Zazie Beetz", "Frances Conroy", "Brett Cullen", "Shea Whigham", "Bill Camp", "Glenn Fleshler", "Leigh Gill", "Marc Maron", "Josh Pais", "Douglas Hodge", "Dante Pereira-Olson"],
+    "director": "Todd Phillips",
+    "plot": "Arthur Fleck, a party clown and a failed stand-up comedian, leads an impoverished life with his ailing mother. However, when society shuns him and brands him as a freak, he decides to embrace the life of chaos in Gotham City.",
+    "trailer": "https://www.youtube.com/embed/zAGVQLHvwOY"
+
+},
+{
+    "id": 45,
+    "title": "Once Upon a Time in Hollywood",
+    "image": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTLzdRKDqxLbaA6OeZKo74WSt0VAqNyUSkV6cLv_na0veLT1oPL",
+    "rating": 7.6,
+    "releaseYear": 2019,
+    "genre": ["Comedy", "Drama"],
+    "cast": ["Leonardo DiCaprio", "Brad Pitt"," Margot Robbie", "Emile Hirsch"," Margaret Qualley", "Timothy Olyphant", "Julia Butters", "Austin Butler"," Dakota Fanning", "Bruce Dern", "Al Pacino"," Kurt Russell", "Mike Moh", "Damian Lewis"],
+    "director": "Quentin Tarantino",
+    "plot": "As Hollywood's Golden Age is winding down during the summer of 1969, television actor Rick Dalton and his stunt double Cliff Booth endeavor to achieve lasting success in Hollywood while meeting several colorful characters along the way.",
+    "trailer": "https://www.youtube.com/embed/ELeMaP8EPAA"
+
+},
+{
+    "id": 46,
+    "title": "Coco",
+    "image": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ1jDZaWFvY98Rk-wjM6Wdtj4bho1ZWnQycTkH02benoVSBQgh6",
+    "rating": 8.4,
+    "releaseYear": 2017,
+    "genre": ["Animation", "Adventure", "Drama"],
+    "cast": ["Anthony Gonzalez", "Gael García Bernal", "Benjamin Bratt", "Alanna Ubach", "Renee Victor", "Ana Ofelia Murguía", "Edward James Olmos", "Jaime Camil", "Alfonso Arau", "Herbert Siguenza", "Gabriel Iglesias", "Cheech Marin"],
+    "director": "Lee Unkrich",
+    "plot": "Aspiring musician Miguel, confronted with his family's ancestral ban on music, enters the Land of the Dead to find his great-great-grandfather, a legendary singer.",
+    "trailer": "https://www.youtube.com/embed/Rvr68u6k5sI"
+},
+
+{
+    "id": 47,
+    "title": "The Grand Budapest Hotel",
+    "image": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSioMZWcOmovUpJ41nKE7mGS2YPMb9VYEevgnBbyaWTgeCgGqrH",
+    "rating": 8.1,
+    "releaseYear": 2014,
+    "genre": ["Adventure", "Comedy", "Crime"],
+    "cast": ["Ralph Fiennes", "Tony Revolori", "Adrien Brody", "Willem Dafoe", "Saoirse Ronan", "Jude Law", "F. Murray Abraham", "Edward Norton", "Jeff Goldblum", "Harvey Keitel", "Mathieu Amalric", "Tilda Swinton", "Bill Murray", "Owen Wilson", "Jason Schwartzman", "Tom Wilkinson", "Léa Seydoux"],
+    "director": "Wes Anderson",
+    "plot": "A writer encounters the owner of an aging high-class hotel, who tells him of his early years serving as a lobby boy in the hotel's glorious years under an exceptional concierge.",
+    "trailer": "https://www.youtube.com/embed/zru-1DbbcsA"
+
+},
+{
+    "id": 48,
+    "title": "The Imitation Game",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTy3CdynzSnNalG-s06VI0Niwo3GPzTdTIRvN1B1aM8XkLafode",
+    "rating": 8.1,
+    "releaseYear": 2014,
+    "genre": ["Biography", "Drama", "Thriller"],
+    "cast": ["Benedict Cumberbatch", "Keira Knightley", "Matthew Goode", "Rory Kinnear", "Charles Dance", "Mark Strong", "Allen Leech", "Matthew Beard"],
+    "director": "Morten Tyldum",
+    "plot": "During World War II, the English mathematical genius Alan Turing tries to crack the German Enigma code with help from fellow mathematicians while attempting to come to terms with his troubled private life.",
+    "trailer": "https://www.youtube.com/embed/nuPZUUED5uk"
+
+},
+{
+    "id": 49,
+    "title": "Fight Club",
+    "image": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSor8IGjk4o_CD4Tc6I4JQL3AFKtSpaMr_YvsbWmZ4kfNqiORHO",
+    "rating": 8.8,
+    "releaseYear": 1999,
+    "genre": ["Drama"],
+    "cast": ["Brad Pitt", "Edward Norton", "Helena Bonham Carter", "Meat Loaf", "Jared Leto", "Zach Grenier", "Holt McCallany"],
+    "director": "David Fincher",
+    "plot": "An insomniac office worker and a devil-may-care soap maker form an underground fight club that evolves into much more.",
+    "trailer": "https://www.youtube.com/embed/qtRKdVHc-cE"
+
+},
+{
+    "id": 50,
+    "title": "The Matrix",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRa7eltGTQs4MHVPVZONEFP9347uvKp_PDa902kzFVIqfL0otPs",
+    "rating": 8.7,
+    "releaseYear": 1999,
+    "genre": ["Action", "Sci-Fi"],
+    "cast": ["Keanu Reeves", "Laurence Fishburne", "Carrie-Anne Moss", "Hugo Weaving", "Joe Pantoliano", "Gloria Foster", "Marcus Chong"],
+    "director": "Lana Wachowski, Lilly Wachowski",
+    "plot": "When a beautiful stranger leads computer hacker Neo to a forbidding underworld, he discovers the shocking truth--the life he knows is the elaborate deception of an evil cyber-intelligence.",
+    "trailer": "https://www.youtube.com/embed/vKQi3bBA1y8"
+
+}
+]

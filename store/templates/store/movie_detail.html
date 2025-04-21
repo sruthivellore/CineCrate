@@ -1,0 +1,100 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/details.css' %}">
+
+<div class="container my-5 details-container">
+    <!-- Title -->
+    <h1 class="movie-title mb-4">{{ movie.title }} <span class="year">({{ movie.releaseYear }})</span></h1>
+
+    <!-- Poster & Trailer -->
+    <div class="row g-4 align-items-start">
+        <!-- Poster -->
+        <div class="col-md-4 text-center">
+            <img src="{{ movie.image }}" alt="{{ movie.title }}" class="img-fluid rounded fancy-poster shadow">
+        </div>
+
+        <!-- Trailer -->
+        <div class="col-md-8 d-flex">
+            <div class="trailer-frame-wrapper flex-fill">
+                <iframe 
+                    src="{{ movie.trailer }}" 
+                    title="YouTube trailer for {{ movie.title }}"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </div>
+    <!-- Movie Details -->
+    <div class="row mt-5">
+        <div class="col">
+            <div class="movie-details p-4 rounded shadow-sm">
+                <h4 class="mb-4">Movie Details</h4>
+                <p><strong>Title:</strong> {{ movie.title }}</p>
+                <p><strong>Release Year:</strong> {{ movie.releaseYear }}</p>
+                <p><strong>IMDb Rating:</strong> ⭐ {{ movie.rating }}</p>
+                <p><strong>Director:</strong> {{ movie.director }}</p>
+                <p><strong>Cast:</strong> {{ movie.cast|join:", " }}</p>
+                <p><strong>Plot:</strong> {{ movie.plot }}</p>
+                <div class="mb-3">
+                    <strong>Genre:</strong>
+                    {% for g in movie.genre %}
+                        <span class="badge genre-badge">{{ g }}</span>
+                    {% endfor %}
+                </div>
+                <a href="#" class="btn btn-filter mt-3">Rent</a>
+            </div>
+        </div>
+    </div>
+    <!-- Cast Gallery -->
+    <div class="row mt-5">
+        <div class="col">
+            <h4 class="text-center mb-4">Cast Members</h4>
+            <div class="cast-scroll-container d-flex overflow-auto gap-3">
+                {% for name, img in movie_cast_images.items %}
+                    <div class="text-center flex-shrink-0">
+                        <img 
+                            src="{{ img }}" 
+                            alt="{{ name }}" 
+                            class="rounded-circle cast-thumb"
+                            data-bs-toggle="tooltip"
+                            data-bs-placement="top"
+                            title="{{ name }}"
+                        >
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Movie Gallery -->
+    <div class="row mt-5">
+        <div class="col">
+            <h4 class="text-center mb-4">Movie Gallery</h2>
+
+            <div id="movieImagesCarousel" class="carousel slide rounded-4 overflow-hidden shadow" data-bs-ride="carousel" data-bs-interval="2000">
+                <div class="carousel-inner">
+                    {% for image in movie_images %}
+                    <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                        <img src="{{ image }}" class="d-block w-100 movie-gallery-img" alt="Movie Image">
+                    </div>
+                    {% endfor %}
+                </div>
+                <!-- Left Button -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#movieImagesCarousel" data-bs-slide="prev">
+                    <i class="fas fa-chevron-left fa-2x text-dark"></i>
+                </button>
+
+                <!-- Right Button -->
+                <button class="carousel-control-next" type="button" data-bs-target="#movieImagesCarousel" data-bs-slide="next">
+                    <i class="fas fa-chevron-right fa-2x text-dark"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
