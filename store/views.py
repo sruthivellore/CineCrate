@@ -47,7 +47,7 @@ def apply_sorting(movies, sort_by):
         return sorted(movies, key=lambda m: int(m.get('releaseYear', 0)), reverse=True)
     elif sort_by == 'title':
         return sorted(movies, key=lambda m: m.get('title', '').strip().lower()[:1])
-    return movies  # no sorting applied
+    return movies  
 
 def paginate_items(items, page_number, per_page=12):
     paginator = Paginator(items, per_page)
@@ -70,24 +70,20 @@ def store(request):
     sort_by = request.GET.get('sort_by')
     page_number = request.GET.get('page')
 
-    # Main filtered and sorted list
     filtered = apply_filters(all_movies, search, genre, year, rating)
     sorted_movies = apply_sorting(filtered, sort_by)
     page_obj = paginate_items(sorted_movies, page_number)
 
-    # Top Rated
     top_movies = [m for m in filtered if float(m.get('rating', 0)) >= 8.0]
     top_movies = apply_sorting(top_movies, 'rating')
     top_movies = apply_sorting(top_movies, sort_by)
     top_movies = paginate_items(top_movies, page_number)
 
-    # Latest
     latest_movies = [m for m in filtered if float(m.get('releaseYear', 0)) >= 2020]
     latest_movies = apply_sorting(latest_movies, sort_by)
     latest_movies = apply_sorting(latest_movies, 'releaseYear')
     latest_movies = paginate_items(latest_movies, page_number)
 
-    # For sidebar filters
     genres = sorted(set(g for m in all_movies for g in m['genre']))
     years = sorted(set(str(m['releaseYear']) for m in all_movies), reverse=True)
 

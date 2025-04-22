@@ -50,7 +50,6 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Hover effect for the details box */
 .movie-details:hover {
     transform: translateY(-5px);
     box-shadow: 0 16px 32px rgba(135, 62, 35, 0.2);
@@ -87,14 +86,12 @@ h4 {
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-/* Hover effect for the genre badges */
 .movie-details .genre-badge:hover {
     transform: scale(1.05);
     background-color: rgba(135, 62, 35, 0.3);
     cursor: pointer;
 }
 
-/* Button Styling */
 .btn-filter {
     color: #fff;
     background-color: rgba(135, 62, 35, 1);
@@ -180,8 +177,6 @@ h4 {
     flex: 0 0 auto;
 }
 
-
-/* For better responsiveness */
 @media (max-width: 768px) {
     .movie-details {
         padding: 1.5rem;

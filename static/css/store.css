@@ -1,19 +1,17 @@
 .cust-cont {
     top: 80px;
     background-color: #eeeee4;
-    z-index: 1000; /* Ensure it's on top of other elements */
+    z-index: 1000;
 }
 
 .tab-content {
-/* Optional: If you still want some space below the navbar */
     overflow-x: hidden;
-    overflow-y: auto; /* Allow scrolling within the content area */
-    height: calc(100vh - 80px); /* Ensure the tab content fills the remaining space */
+    overflow-y: auto; 
+    height: calc(100vh - 80px);
 }
 .tab-content::-webkit-scrollbar {
-    display: none;                 /* Chrome, Safari */
+    display: none;                
 }
-/* Filter panel heading */
 .filter-title {
     font-weight: bold;
     color: rgba(135, 62, 35, 1);
@@ -21,7 +19,6 @@
     padding-bottom: 5px;
 }
 
-/* Enhanced dropdown style */
 .fancy-select {
     border-radius: 30px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -38,7 +35,6 @@
     outline: none;
 }
 
-/* Stylish Apply button */
 .btn-filter {
     color: #fff;
     background-color: rgba(135, 62, 35, 1);
@@ -93,7 +89,6 @@
     box-shadow: 0 0 10px rgba(135, 62, 35, 0.5);
     transition: transform 0.3s ease, background-color 0.3s;
 }
-/* Match tab colors to your theme */
 .custom-tab-style .nav-link {
     color: rgba(135, 62, 35, 1);
     font-weight: 500;
