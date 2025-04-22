@@ -52,7 +52,8 @@
     <div class="row mt-5">
         <div class="col">
             <h4 class="text-center mb-4">Cast Members</h4>
-            <div class="cast-scroll-container d-flex overflow-auto gap-3">
+
+            <div class="cast-scroll-container d-flex overflow-auto {% if movie_cast_images|length < 9 %}justify-content-center{% endif %} gap-3">
                 {% for name, img in movie_cast_images.items %}
                     <div class="text-center flex-shrink-0">
                         <img 

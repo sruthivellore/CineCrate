@@ -74,26 +74,26 @@
                     <div class="tab-pane fade {% if request.GET.tab == 'all' or not request.GET.tab %}show active{% endif %}" id="all-tab-pane" >
                         <div class="row">
                             {% for movie in page_obj %}
-                                <div class="col-md-3 mb-3"> 
-                                    <a href="{% url 'movie_detail' id=movie.id %}" style="text-decoration: none; color: inherit;">
-                                    <div class="card">
-                                        <img src="{{ movie.image }}" class="card-img-top" alt="Movie Poster">
-                                        <div class="card-body">
-                                            <h6 class="card-title text-center text-dark cust-spacing">{{ movie.title }}</h6>
-                                            <p class="card-text text-center text-muted small cust-spacing">
+                            <div class="col-md-3 mb-3"> 
+                                <a href="{% url 'movie_detail' id=movie.id %}" style="text-decoration: none; color: inherit;">
+                                    <div class="card movie-card text-white shadow" style="background-image: url('{{ movie.image }}');">
+                                        <div class="card-overlay p-3">
+                                            <h5 class="card-title text-center cust-spacing">{{ movie.title }}</h5>
+                                            <p class="card-text text-center cust-spacing">
                                                 {{ movie.genre|join:", " }}
                                             </p>
-                                            <p class="text-center text-muted small cust-spacing">
+                                            <p class="text-center cust-spacing">
                                                 <span class="badge border border-warning text-dark bg-transparent">⭐ {{ movie.rating }}</span>
                                                 | {{ movie.releaseYear }}
                                             </p>
-                                            <div class="text-center">
-                                                <a href="#" class="btn btn-filter btn-sm">Rent</a>
+                                            <div class="text-center mt-2">
+                                                <button class="btn btn-filter btn-sm">Rent</button>
                                             </div>
                                         </div>
-                                    </div></a>
-                                </div>
-                            {% endfor %}
+                                    </div>
+                                </a>
+                            </div>
+                            {% endfor %}                            
                         </div>
                         <!-- Pagination -->
                         <nav>
@@ -121,22 +121,22 @@
                         {% for movie in top_movies %}
                         <div class="col-md-3 mb-3"> 
                             <a href="{% url 'movie_detail' id=movie.id %}" style="text-decoration: none; color: inherit;">
-                            <div class="card">
-                                <img src="{{ movie.image }}" class="card-img-top" alt="Movie Poster">
-                                <div class="card-body">
-                                    <h6 class="card-title text-center text-dark cust-spacing">{{ movie.title }}</h6>
-                                    <p class="card-text text-center text-muted small cust-spacing">
-                                        {{ movie.genre|join:", " }}
-                                    </p>
-                                    <p class="text-center text-muted small cust-spacing">
-                                        <span class="badge border border-warning text-dark bg-transparent">⭐ {{ movie.rating }}</span>
-                                        | {{ movie.releaseYear }}
-                                    </p>
-                                    <div class="text-center">
-                                        <a href="#" class="btn btn-filter btn-sm">Rent</a>
+                                <div class="card movie-card text-white shadow" style="background-image: url('{{ movie.image }}');">
+                                    <div class="card-overlay p-3">
+                                        <h5 class="card-title text-center cust-spacing">{{ movie.title }}</h5>
+                                        <p class="card-text text-center cust-spacing">
+                                            {{ movie.genre|join:", " }}
+                                        </p>
+                                        <p class="text-center cust-spacing">
+                                            <span class="badge border border-warning text-dark bg-transparent">⭐ {{ movie.rating }}</span>
+                                            | {{ movie.releaseYear }}
+                                        </p>
+                                        <div class="text-center mt-2">
+                                            <button class="btn btn-filter btn-sm">Rent</button>
+                                        </div>
                                     </div>
                                 </div>
-                            </div></a>
+                            </a>
                         </div>
                     {% endfor %}
                 </div>
@@ -163,22 +163,22 @@
                         {% for movie in latest_movies %}
                         <div class="col-md-3 mb-3"> 
                             <a href="{% url 'movie_detail' id=movie.id %}" style="text-decoration: none; color: inherit;">
-                            <div class="card">
-                                <img src="{{ movie.image }}" class="card-img-top" alt="Movie Poster">
-                                <div class="card-body">
-                                    <h6 class="card-title text-center text-dark cust-spacing">{{ movie.title }}</h6>
-                                    <p class="card-text text-center text-muted small cust-spacing">
-                                        {{ movie.genre|join:", " }}
-                                    </p>
-                                    <p class="text-center text-muted small cust-spacing">
-                                        <span class="badge border border-warning text-dark bg-transparent">⭐ {{ movie.rating }}</span>
-                                        | {{ movie.releaseYear }}
-                                    </p>
-                                    <div class="text-center">
-                                        <a href="#" class="btn btn-filter btn-sm">Rent</a>
+                                <div class="card movie-card text-white shadow" style="background-image: url('{{ movie.image }}');">
+                                    <div class="card-overlay p-3">
+                                        <h5 class="card-title text-center cust-spacing">{{ movie.title }}</h5>
+                                        <p class="card-text text-center cust-spacing">
+                                            {{ movie.genre|join:", " }}
+                                        </p>
+                                        <p class="text-center cust-spacing">
+                                            <span class="badge border border-warning text-dark bg-transparent">⭐ {{ movie.rating }}</span>
+                                            | {{ movie.releaseYear }}
+                                        </p>
+                                        <div class="text-center mt-2">
+                                            <button class="btn btn-filter btn-sm">Rent</button>
+                                        </div>
                                     </div>
                                 </div>
-                            </div></a>
+                            </a>
                         </div>
                     {% endfor %}
                 </div>
