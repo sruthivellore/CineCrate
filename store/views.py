@@ -1,7 +1,15 @@
+from django.contrib.auth.decorators import login_required
+from django.views.decorators.csrf import csrf_protect
+from django.contrib.auth import authenticate, login, logout
+from django.shortcuts import render, redirect
+from django.contrib.auth.models import User
 from django.core.paginator import Paginator
-from django.shortcuts import render
+from django.contrib import messages
 from django.conf import settings
+from .models import Customer
 import json
+import re
+
 
 def load_movies():
     json_file_path = settings.BASE_DIR / 'static' / 'movies.json'
@@ -98,3 +106,84 @@ def store(request):
         'request': request,
         'querystring': querystring,
     })
+
+@login_required
+def custom_logout(request):
+    logout(request)
+    return redirect('custom_login') 
+
+def is_strong_password(password):
+    return (
+        len(password) >= 8 and
+        re.search(r'[A-Z]', password) and
+        re.search(r'[a-z]', password) and
+        re.search(r'\d', password) and
+        re.search(r'[!@#$%^&*(),.?":{}|<>]', password)
+    )
+
+
+@csrf_protect
+def custom_login(request):
+    all_movies = load_movies()
+    latest_movies = sorted(all_movies, key=lambda x: x['releaseYear'], reverse=True)[:10]
+    image_urls = [movie['image'] for movie in latest_movies]
+
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect('/')
+        else:
+            return render(request, 'user_auth/login.html', {
+                'error': 'Invalid credentials',
+                'image_urls': image_urls
+            })
+
+    return render(request, 'user_auth/login.html', {'image_urls': image_urls})
+
+
+@csrf_protect
+def signup(request):
+    all_movies = load_movies()
+    image_urls = [movie['image'] for movie in all_movies][:10]
+
+    if request.method == 'POST':
+        username = request.POST['username']
+        email = request.POST['email']
+        password = request.POST['password1']
+        confirm_password = request.POST['password2']
+
+        if password != confirm_password:
+            return render(request, 'user_auth/signup.html', {
+                'error': "Passwords do not match.",
+                'image_urls': image_urls
+            })
+
+        if not is_strong_password(password):
+            return render(request, 'user_auth/signup.html', {
+                'error': "Password must be at least 8 characters long, include one uppercase, one lowercase, one digit, and one special character.",
+                'image_urls': image_urls
+            })
+
+        if User.objects.filter(username=username).exists():
+            return render(request, 'user_auth/signup.html', {
+                'error': "Username already taken.",
+                'image_urls': image_urls
+            })
+        if User.objects.filter(email=email).exists():
+            return render(request, 'user_auth/signup.html', {
+                'error': "Email already taken.",
+                'image_urls': image_urls
+            })
+
+        user = User.objects.create_user(username=username, email=email, password=password)
+        Customer.objects.create(user=user, email=email)
+        messages.success(request, f"Welcome {username}, your account has been created!")
+        return render(request, 'user_auth/login.html', {
+                'success': 'Your account has been created! Kindly Login.',
+                'image_urls': image_urls
+            })
+
+    return render(request, 'user_auth/signup.html', {'image_urls': image_urls})

@@ -1,0 +1,70 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+
+<div class="d-flex justify-content-center align-items-center">
+    <div class="card login-container shadow-lg">
+        <div class="row g-0 h-100">
+            <!-- Left Carousel with Funky Header -->
+            <div class="col-md-6 position-relative">
+                <div id="movieCarousel" class="carousel slide h-100" data-bs-ride="carousel">
+                    <div class="carousel-inner h-100">
+                        {% for image_url in image_urls %}
+                            <div class="carousel-item h-100 {% if forloop.first %}active{% endif %}">
+                                <img src="{{ image_url }}" class="d-block w-100 h-100" style="object-fit: cover;" alt="Movie Image">
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#movieCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#movieCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Right Login Form -->
+            <div class="col-md-6 d-flex align-items-center p-4">
+                <div class="w-100">
+                    <h3 class="text-center mb-3">Log in to Unlock the Blockbusters!</h3>
+                    <p class="subtext text-center">Stream, Rent, and Experience the Magic.</p>
+                    <form method="post" action="{% url 'custom_login' %}">
+                        {% csrf_token %}
+                        <br>
+                        {% if error %}
+                            <div class="alert alert-danger">
+                                {{ error }}
+                            </div>
+                        {% endif %}
+                        {% if success %}
+                        <div class="alert alert-success">
+                            {{ success }}
+                        </div>
+                    {% endif %}
+                        <br>
+                        <div class="mb-3">
+                            <input type="text" name="username" placeholder="Username"
+                                class="form-control fancy-select" value="{{ request.GET.search }}" required>
+                        </div>
+            
+                        <div class="mb-3">
+                            <input type="password" name="password" placeholder="Password"
+                                class="form-control fancy-select" value="{{ request.GET.search }}" required>
+                        </div>
+            
+                        <button type="submit" class="btn btn-filter w-100 mb-3">Login  <i class="fa-solid fa-right-to-bracket"></i> </button>
+                        <br><br>
+                        <a href="{% url 'signup' %}" class="btn btn-filter w-100">
+                           Sign Up <i class="fa-solid fa-user-plus"></i>
+                        </a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

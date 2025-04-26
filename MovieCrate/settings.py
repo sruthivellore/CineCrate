@@ -59,7 +59,7 @@ TEMPLATES = [
         },
     },
 ]
-
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 WSGI_APPLICATION = 'MovieCrate.wsgi.application'
 
 
