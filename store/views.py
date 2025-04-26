@@ -2,9 +2,12 @@ from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_protect
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
+from django.views.decorators.http import require_POST
 from django.contrib.auth.models import User
 from django.core.paginator import Paginator
 from django.contrib import messages
+from .models import Rented
+from django.utils import timezone
 from django.conf import settings
 from .models import Customer
 import json
@@ -25,13 +28,18 @@ def load_cast_images():
         return json.load(file)
     
 def movie_detail(request, id):
+    rented_info = get_rented_movies_info(request.user) if request.user.is_authenticated else {
+        'all_rented_movies': set(),
+        'user_rented_movies': set()
+    }
     all_movies = load_movies()
     movies_images = load_movie_images()
     cast_images = load_cast_images()
     movie = next((movie for movie in all_movies if movie['id'] == id), None) 
     movie_images = movies_images[str(id)] 
     movie_cast_images = cast_images[str(id)]
-    return render(request, 'store/movie_detail.html', {'movie': movie, 'movie_images': movie_images,'movie_cast_images': movie_cast_images})
+    print(movie, rented_info)
+    return render(request, 'store/movie_detail.html', {'rented_info' : rented_info,'movie': movie, 'movie_images': movie_images,'movie_cast_images': movie_cast_images})
 
 def apply_filters(movies, search, genre, year, rating):
     if search:
@@ -97,6 +105,16 @@ def store(request):
 
     querystring = '&'.join([f"{k}={v}" for k, v in request.GET.items() if k != 'page'])
 
+    rented_info = get_rented_movies_info(request.user) if request.user.is_authenticated else {
+        'all_rented_movies': set(),
+        'user_rented_movies': set()
+    }
+    user_rented_movies = []
+    if request.user.is_authenticated:
+        user_rented_ids = rented_info['user_rented_movies']
+        user_rented_movies = [m for m in all_movies if int(m['id']) in user_rented_ids]
+    user_rented_movies = paginate_items(user_rented_movies, page_number)
+
     return render(request, 'store/Store.html', {
         'page_obj': page_obj,
         'genres': genres,
@@ -105,6 +123,9 @@ def store(request):
         'latest_movies': latest_movies,
         'request': request,
         'querystring': querystring,
+        'rented_info':rented_info,
+        'user_rented_movies': user_rented_movies
+
     })
 
 @login_required
@@ -134,7 +155,8 @@ def custom_login(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('/')
+            messages.success(request, 'Login successful! Welcome back.')
+            return redirect('store')
         else:
             return render(request, 'user_auth/login.html', {
                 'error': 'Invalid credentials',
@@ -187,3 +209,39 @@ def signup(request):
             })
 
     return render(request, 'user_auth/signup.html', {'image_urls': image_urls})
+
+
+@login_required
+@require_POST
+def rent_movie(request, movie_id):
+    user = request.user
+
+    # Example fixed rental charge — adjust as needed
+    rental_charge = 4.99
+
+    rented_movie = Rented.objects.create(
+        movie_id=movie_id,
+        user=user,
+        charges=rental_charge,
+        start_date=timezone.now()
+    )
+    rented_movie.save()
+    messages.success(request, "Movie rented successfully!")
+    return redirect('movie_detail', id=movie_id)
+
+def get_rented_movies_info(user: User):
+
+    all_rented_ids = set(int(mid) for mid in Rented.objects.values_list('movie_id', flat=True))
+    user_rented_ids = set(int(mid) for mid in Rented.objects.filter(user=user).values_list('movie_id', flat=True))
+
+    return {
+        'all_rented_movies': all_rented_ids,
+        'user_rented_movies': user_rented_ids,
+    }
+
+@login_required
+@require_POST
+def return_movie(request, movie_id):
+    Rented.objects.filter(user=request.user, movie_id=movie_id).delete()
+    messages.success(request, "Movie returned successfully!")
+    return redirect('movie_detail', id=movie_id)

@@ -2,6 +2,22 @@
 {% load static %}
 {% block content %}
 <link rel="stylesheet" href="{% static 'css/store.css' %}">
+<link rel="stylesheet" href="{% static 'css/ctoast.css' %}">
+<div id="loginAlert" class="alert alert-primary alert-dismissible fade show d-none custom-toast" role="alert">
+    <i class="fa-solid fa-circle-exclamation"></i>
+    You need to <a href="{% url 'custom_login' %}" class="alert-link">log in</a> to rent movies.
+    <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{% if messages %}
+  {% for message in messages %}
+    <div class="alert alert-success alert-dismissible fade show custom-toast" role="alert">
+        <i class="fa-solid fa-circle-check"></i>  {{ message }}
+        <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  {% endfor %}
+{% endif %}
 <div class="container-fluid">
     <div class="row">
         <!-- Left Panel -->
@@ -12,6 +28,11 @@
                 <form method="GET" class="mb-3">
                     <input type="hidden" name="tab" value="{{ request.GET.tab|default:'all' }}">
                     <!-- Search Input -->
+                    {% if user.is_authenticated %}
+                        <h3 class="mb-3 text-center username-display">
+                            <i class="fa-solid fa-user"></i> {{ user.username }}
+                        </h3>
+                    {% endif %}
                     <h5 class="filter-title mb-3 text-center">Search</h5>
                     <input type="text" name="search" placeholder="Search" class="form-control fancy-select mb-3" value="{{ request.GET.search }}">
 
@@ -66,6 +87,7 @@
                     <li class="nav-item" ><a class="nav-link {% if request.GET.tab == 'all' or not request.GET.tab %}active{% endif %}" id="all-tab" href="?tab=all" >All</a></li>
                     <li class="nav-item" ><a class="nav-link {% if request.GET.tab == 'top' %}active{% endif %}" href="?tab=top" id="top-tab"  >Top Rated</a></li>
                     <li class="nav-item" ><a class="nav-link {% if request.GET.tab == 'latest' %}active{% endif %}"  id="latest-tab" href="?tab=latest" >Latest</a></li>
+                    {% if user.is_authenticated %}<li class="nav-item" ><a class="nav-link {% if request.GET.tab == 'urented' %}active{% endif %}"  id="urented-tab" href="?tab=urented" >My Rented Movies</a></li> {% endif %}
                 </ul>
             </div>
 
@@ -75,23 +97,41 @@
                         <div class="row">
                             {% for movie in page_obj %}
                             <div class="col-md-3 mb-3"> 
-                                <a href="{% url 'movie_detail' id=movie.id %}" style="text-decoration: none; color: inherit;">
-                                    <div class="card movie-card text-white shadow" style="background-image: url('{{ movie.image }}');">
-                                        <div class="card-overlay p-3">
-                                            <h5 class="card-title text-center cust-spacing">{{ movie.title }}</h5>
-                                            <p class="card-text text-center cust-spacing">
-                                                {{ movie.genre|join:", " }}
-                                            </p>
-                                            <p class="text-center cust-spacing">
-                                                <span class="badge border border-warning text-dark bg-transparent">⭐ {{ movie.rating }}</span>
-                                                | {{ movie.releaseYear }}
-                                            </p>
-                                            <div class="text-center mt-2">
-                                                <button class="btn btn-filter btn-sm">Rent</button>
-                                            </div>
+                                <div class="card movie-card text-white shadow" style="background-image: url('{{ movie.image }}');">
+                                    <div class="card-overlay p-3">
+                                        <a href="{% url 'movie_detail' id=movie.id %}" style="text-decoration: none; color: inherit;">
+                                        <h5 class="card-title text-center cust-spacing">{{ movie.title }}</h5></a>
+                                        <p class="card-text text-center cust-spacing">
+                                            {{ movie.genre|join:", " }}
+                                        </p>
+                                        <p class="text-center cust-spacing">
+                                            <span class="badge border border-warning text-dark bg-transparent">⭐ {{ movie.rating }}</span>
+                                            | {{ movie.releaseYear }}
+                                        </p>
+                                        <div class="text-center mt-2">
+                                            {% if user.is_authenticated %}
+                                                {% if movie.id in rented_info.all_rented_movies %}
+                                                    {% if movie.id in rented_info.user_rented_movies %}
+                                                        <!-- Show Return Button -->
+                                                        <form action="{% url 'return_movie' movie.id %}" method="POST">
+                                                            {% csrf_token %}
+                                                            <button type="submit" class="btn btn-filter mt-3">Return</button>
+                                                        </form>
+                                                    {% else %}
+                                                        <button class="btn btn-filter mt-3" disabled>Rented</button>
+                                                    {% endif %}
+                                                {% else %}
+                                                    <form action="{% url 'rent_movie' movie.id %}" method="POST">
+                                                        {% csrf_token %}
+                                                        <button type="submit" class="btn btn-filter mt-3">Rent</button>
+                                                    </form>
+                                                {% endif %}
+                                            {% else %}
+                                                <button type="button" class="btn btn-filter mt-3 show-login-toast">Rent</button>
+                                            {% endif %}
                                         </div>
                                     </div>
-                                </a>
+                                </div>
                             </div>
                             {% endfor %}                            
                         </div>
@@ -120,23 +160,41 @@
                     <div class="row">
                         {% for movie in top_movies %}
                         <div class="col-md-3 mb-3"> 
-                            <a href="{% url 'movie_detail' id=movie.id %}" style="text-decoration: none; color: inherit;">
-                                <div class="card movie-card text-white shadow" style="background-image: url('{{ movie.image }}');">
-                                    <div class="card-overlay p-3">
-                                        <h5 class="card-title text-center cust-spacing">{{ movie.title }}</h5>
-                                        <p class="card-text text-center cust-spacing">
-                                            {{ movie.genre|join:", " }}
-                                        </p>
-                                        <p class="text-center cust-spacing">
-                                            <span class="badge border border-warning text-dark bg-transparent">⭐ {{ movie.rating }}</span>
-                                            | {{ movie.releaseYear }}
-                                        </p>
-                                        <div class="text-center mt-2">
-                                            <button class="btn btn-filter btn-sm">Rent</button>
-                                        </div>
+                            <div class="card movie-card text-white shadow" style="background-image: url('{{ movie.image }}');">
+                                <div class="card-overlay p-3">
+                                    <a href="{% url 'movie_detail' id=movie.id %}" style="text-decoration: none; color: inherit;">
+                                    <h5 class="card-title text-center cust-spacing">{{ movie.title }}</h5></a>
+                                    <p class="card-text text-center cust-spacing">
+                                        {{ movie.genre|join:", " }}
+                                    </p>
+                                    <p class="text-center cust-spacing">
+                                        <span class="badge border border-warning text-dark bg-transparent">⭐ {{ movie.rating }}</span>
+                                        | {{ movie.releaseYear }}
+                                    </p>
+                                    <div class="text-center mt-2">
+                                        {% if user.is_authenticated %}
+                                        {% if movie.id in rented_info.all_rented_movies %}
+                                        {% if movie.id in rented_info.user_rented_movies %}
+                                            <!-- Show Return Button -->
+                                            <form action="{% url 'return_movie' movie.id %}" method="POST">
+                                                {% csrf_token %}
+                                                <button type="submit" class="btn btn-filter mt-3">Return</button>
+                                            </form>
+                                        {% else %}
+                                            <button class="btn btn-filter mt-3" disabled>Rented</button>
+                                        {% endif %}
+                                    {% else %}
+                                        <form action="{% url 'rent_movie' movie.id %}" method="POST">
+                                            {% csrf_token %}
+                                            <button type="submit" class="btn btn-filter mt-3">Rent</button>
+                                        </form>
+                                    {% endif %}
+                                        {% else %}
+                                            <button type="button" class="btn btn-filter mt-3 show-login-toast">Rent</button>
+                                        {% endif %}
                                     </div>
                                 </div>
-                            </a>
+                            </div>
                         </div>
                     {% endfor %}
                 </div>
@@ -162,23 +220,41 @@
                     <div class="row">
                         {% for movie in latest_movies %}
                         <div class="col-md-3 mb-3"> 
-                            <a href="{% url 'movie_detail' id=movie.id %}" style="text-decoration: none; color: inherit;">
-                                <div class="card movie-card text-white shadow" style="background-image: url('{{ movie.image }}');">
-                                    <div class="card-overlay p-3">
-                                        <h5 class="card-title text-center cust-spacing">{{ movie.title }}</h5>
-                                        <p class="card-text text-center cust-spacing">
-                                            {{ movie.genre|join:", " }}
-                                        </p>
-                                        <p class="text-center cust-spacing">
-                                            <span class="badge border border-warning text-dark bg-transparent">⭐ {{ movie.rating }}</span>
-                                            | {{ movie.releaseYear }}
-                                        </p>
-                                        <div class="text-center mt-2">
-                                            <button class="btn btn-filter btn-sm">Rent</button>
-                                        </div>
+                            <div class="card movie-card text-white shadow" style="background-image: url('{{ movie.image }}');">
+                                <div class="card-overlay p-3">
+                                    <a href="{% url 'movie_detail' id=movie.id %}" style="text-decoration: none; color: inherit;">
+                                    <h5 class="card-title text-center cust-spacing">{{ movie.title }}</h5></a>
+                                    <p class="card-text text-center cust-spacing">
+                                        {{ movie.genre|join:", " }}
+                                    </p>
+                                    <p class="text-center cust-spacing">
+                                        <span class="badge border border-warning text-dark bg-transparent">⭐ {{ movie.rating }}</span>
+                                        | {{ movie.releaseYear }}
+                                    </p>
+                                    <div class="text-center mt-2">
+                                        {% if user.is_authenticated %}
+                                        {% if movie.id in rented_info.all_rented_movies %}
+                                        {% if movie.id in rented_info.user_rented_movies %}
+                                            <!-- Show Return Button -->
+                                            <form action="{% url 'return_movie' movie.id %}" method="POST">
+                                                {% csrf_token %}
+                                                <button type="submit" class="btn btn-filter mt-3">Return</button>
+                                            </form>
+                                        {% else %}
+                                            <button class="btn btn-filter mt-3" disabled>Rented</button>
+                                        {% endif %}
+                                    {% else %}
+                                        <form action="{% url 'rent_movie' movie.id %}" method="POST">
+                                            {% csrf_token %}
+                                            <button type="submit" class="btn btn-filter mt-3">Rent</button>
+                                        </form>
+                                    {% endif %}
+                                        {% else %}
+                                            <button type="button" class="btn btn-filter mt-3 show-login-toast">Rent</button>
+                                        {% endif %}
                                     </div>
                                 </div>
-                            </a>
+                            </div>
                         </div>
                     {% endfor %}
                 </div>
@@ -199,8 +275,70 @@
                     </ul>
                 </nav>
                 </div>
+
+
+                <div class="tab-pane fade {% if request.GET.tab == 'urented'%}show active{% endif %}" id="urented-tab-pane" >
+                    <div class="row">
+                        {% for movie in user_rented_movies %}
+                        <div class="col-md-3 mb-3"> 
+                            <div class="card movie-card text-white shadow" style="background-image: url('{{ movie.image }}');">
+                                <div class="card-overlay p-3">
+                                    <a href="{% url 'movie_detail' id=movie.id %}" style="text-decoration: none; color: inherit;">
+                                    <h5 class="card-title text-center cust-spacing">{{ movie.title }}</h5></a>
+                                    <p class="card-text text-center cust-spacing">
+                                        {{ movie.genre|join:", " }}
+                                    </p>
+                                    <p class="text-center cust-spacing">
+                                        <span class="badge border border-warning text-dark bg-transparent">⭐ {{ movie.rating }}</span>
+                                        | {{ movie.releaseYear }}
+                                    </p>
+                                    <div class="text-center mt-2">
+                                        {% if user.is_authenticated %}
+                                        {% if movie.id in rented_info.all_rented_movies %}
+                                        {% if movie.id in rented_info.user_rented_movies %}
+                                            <!-- Show Return Button -->
+                                            <form action="{% url 'return_movie' movie.id %}" method="POST">
+                                                {% csrf_token %}
+                                                <button type="submit" class="btn btn-filter mt-3">Return</button>
+                                            </form>
+                                        {% else %}
+                                            <button class="btn btn-filter mt-3" disabled>Rented</button>
+                                        {% endif %}
+                                    {% else %}
+                                        <form action="{% url 'rent_movie' movie.id %}" method="POST">
+                                            {% csrf_token %}
+                                            <button type="submit" class="btn btn-filter mt-3">Rent</button>
+                                        </form>
+                                    {% endif %}
+                                        {% else %}
+                                            <button type="button" class="btn btn-filter mt-3 show-login-toast">Rent</button>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <!-- Pagination -->
+                <nav>
+                    <ul class="pagination justify-content-center">
+                        {% if user_rented_movies.has_previous %}
+                            <li class="page-item"><a class="page-link" href="?page={{ user_rented_movies.previous_page_number }}&{{ querystring }}">&laquo;</a></li>
+                        {% endif %}
+                        {% for num in user_rented_movies.paginator.page_range %}
+                            <li class="page-item {% if user_rented_movies.number == num %}active{% endif %}">
+                                <a class="page-link" href="?page={{ num }}&{{ querystring }}">{{ num }}</a>
+                            </li>
+                        {% endfor %}
+                        {% if user_rented_movies.has_next %}
+                            <li class="page-item"><a class="page-link" href="?page={{ user_rented_movies.next_page_number }}&{{ querystring }}">&raquo;</a></li>
+                        {% endif %}
+                    </ul>
+                </nav>
+                </div>
             </div>
         </div>
     </div>
 </div>
+<script src="{% static 'js/ctoast.js' %}"></script>
 {% endblock %}

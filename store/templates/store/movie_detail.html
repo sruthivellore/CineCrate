@@ -2,7 +2,22 @@
 {% load static %}
 {% block content %}
 <link rel="stylesheet" href="{% static 'css/details.css' %}">
-
+<link rel="stylesheet" href="{% static 'css/ctoast.css' %}">
+<div id="loginAlert" class="alert alert-primary alert-dismissible fade show d-none custom-toast" role="alert">
+    <i class="fa-solid fa-circle-exclamation"></i>
+    You need to <a href="{% url 'custom_login' %}" class="alert-link">log in</a> to rent movies.
+    <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{% if messages %}
+  {% for message in messages %}
+    <div class="alert alert-success alert-dismissible fade show custom-toast" role="alert">
+        <i class="fa-solid fa-circle-check"></i>  {{ message }}
+        <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  {% endfor %}
+{% endif %}
 <div class="container my-5 details-container">
     <!-- Title -->
     <h1 class="movie-title mb-4">{{ movie.title }} <span class="year">({{ movie.releaseYear }})</span></h1>
@@ -44,7 +59,26 @@
                         <span class="badge genre-badge">{{ g }}</span>
                     {% endfor %}
                 </div>
-                <a href="#" class="btn btn-filter mt-3">Rent</a>
+                {% if user.is_authenticated %}
+                    {% if movie.id in rented_info.all_rented_movies %}
+                        {% if movie.id in rented_info.user_rented_movies %}
+                            <!-- Show Return Button -->
+                            <form action="{% url 'return_movie' movie.id %}" method="POST">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-filter mt-3">Return</button>
+                            </form>
+                        {% else %}
+                            <button class="btn btn-filter mt-3" disabled>Rented</button>
+                        {% endif %}
+                    {% else %}
+                        <form action="{% url 'rent_movie' movie.id %}" method="POST">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-filter mt-3">Rent</button>
+                        </form>
+                    {% endif %}
+                {% else %}
+                     <button type="button" class="btn btn-filter mt-3 show-login-toast">Rent</button>
+                {% endif %}
             </div>
         </div>
     </div>
@@ -97,5 +131,6 @@
     </div>
 
 </div>
+<script src="{% static 'js/ctoast.js' %}"></script>
 
 {% endblock %}
