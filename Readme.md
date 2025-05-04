@@ -90,10 +90,6 @@ To rent movies, you must first **sign up** or **log in** to the app. Here's how:
 
 ---
 
-Got it! Here's the updated **Project Structure** section of the README based on the folder structure you provided:
-
----
-
 ## 📁 Project Structure
 
 Here’s a breakdown of the project structure:
