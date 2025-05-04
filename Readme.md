@@ -146,3 +146,24 @@ The script used to run server commands, make migrations, migrate the database, a
 * [Bootstrap](https://getbootstrap.com/) - Front-end styling
 * HTML5, CSS3, JavaScript
 
+---
+
+## 📸 Demo
+
+Here are some snapshots of CineCrate in action:
+
+| Screen                      | Description                                                                 | Image                   |
+| :-------------------------- | :-------------------------------------------------------------------------- | :---------------------- |
+| Home                        | Browse all available movies.                                                | ![](demo_images/1.png)  |
+| Search                      | Find movies by title, genre, or year.                                       | ![](demo_images/2.png)  |
+| Movie Details               | View detailed information about a movie (poster, description, genre, etc.). | ![](demo_images/3.png)  |
+| Movie Details (continued)   |                                                                             | ![](demo_images/4.png)  |
+| Movie Details (continued)   |                                                                             | ![](demo_images/5.png)  |
+| Login                       | Existing users can log in to rent movies.                                   | ![](demo_images/6.png)  |
+| Signup                      | New users can create an account.                                            | ![](demo_images/7.png)  |
+| Rent Movie                  | Logged-in users can rent available movies.                                  | ![](demo_images/8.png)  |
+| Rent Movie (confirmation)   |                                                                             | ![](demo_images/9.png)  |
+| Return Movie                | Rented movies can be returned.                                              | ![](demo_images/10.png) |
+| Return Movie (confirmation) |                                                                             | ![](demo_images/11.png) |
+
+---
