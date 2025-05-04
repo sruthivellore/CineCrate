@@ -113,6 +113,8 @@ def store(request):
     if request.user.is_authenticated:
         user_rented_ids = rented_info['user_rented_movies']
         user_rented_movies = [m for m in all_movies if int(m['id']) in user_rented_ids]
+    user_rented_movies = apply_filters(user_rented_movies, search, genre, year, rating)
+    user_rented_movies = apply_sorting(user_rented_movies, sort_by)
     user_rented_movies = paginate_items(user_rented_movies, page_number)
 
     return render(request, 'store/Store.html', {

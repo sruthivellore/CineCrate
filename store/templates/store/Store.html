@@ -113,7 +113,7 @@
                                                 {% if movie.id in rented_info.all_rented_movies %}
                                                     {% if movie.id in rented_info.user_rented_movies %}
                                                         <!-- Show Return Button -->
-                                                        <form action="{% url 'return_movie' movie.id %}" method="POST">
+                                                        <form action="{% url 'return_movie' movie.id %}" method="POST" class="confirm-return"  data-movie-name="{{ movie.title }}">
                                                             {% csrf_token %}
                                                             <button type="submit" class="btn btn-filter mt-3">Return</button>
                                                         </form>
@@ -121,7 +121,7 @@
                                                         <button class="btn btn-filter mt-3" disabled>Rented</button>
                                                     {% endif %}
                                                 {% else %}
-                                                    <form action="{% url 'rent_movie' movie.id %}" method="POST">
+                                                    <form action="{% url 'rent_movie' movie.id %}" method="POST" class="confirm-rent"  data-movie-name="{{ movie.title }}">
                                                         {% csrf_token %}
                                                         <button type="submit" class="btn btn-filter mt-3">Rent</button>
                                                     </form>
@@ -157,6 +157,8 @@
 
                 <!-- Top & Latest Tabs -->
                 <div class="tab-pane fade {% if request.GET.tab == 'top'%}show active{% endif %}" id="top-tab-pane">
+                    
+                    
                     <div class="row">
                         {% for movie in top_movies %}
                         <div class="col-md-3 mb-3"> 
@@ -176,7 +178,7 @@
                                         {% if movie.id in rented_info.all_rented_movies %}
                                         {% if movie.id in rented_info.user_rented_movies %}
                                             <!-- Show Return Button -->
-                                            <form action="{% url 'return_movie' movie.id %}" method="POST">
+                                            <form action="{% url 'return_movie' movie.id %}" method="POST" class="confirm-return"  data-movie-name="{{ movie.title }}">
                                                 {% csrf_token %}
                                                 <button type="submit" class="btn btn-filter mt-3">Return</button>
                                             </form>
@@ -184,7 +186,7 @@
                                             <button class="btn btn-filter mt-3" disabled>Rented</button>
                                         {% endif %}
                                     {% else %}
-                                        <form action="{% url 'rent_movie' movie.id %}" method="POST">
+                                        <form action="{% url 'rent_movie' movie.id %}" method="POST" class="confirm-rent"  data-movie-name="{{ movie.title }}">
                                             {% csrf_token %}
                                             <button type="submit" class="btn btn-filter mt-3">Rent</button>
                                         </form>
@@ -236,7 +238,7 @@
                                         {% if movie.id in rented_info.all_rented_movies %}
                                         {% if movie.id in rented_info.user_rented_movies %}
                                             <!-- Show Return Button -->
-                                            <form action="{% url 'return_movie' movie.id %}" method="POST">
+                                            <form action="{% url 'return_movie' movie.id %}" method="POST" class="confirm-return"  data-movie-name="{{ movie.title }}">
                                                 {% csrf_token %}
                                                 <button type="submit" class="btn btn-filter mt-3">Return</button>
                                             </form>
@@ -244,7 +246,7 @@
                                             <button class="btn btn-filter mt-3" disabled>Rented</button>
                                         {% endif %}
                                     {% else %}
-                                        <form action="{% url 'rent_movie' movie.id %}" method="POST">
+                                        <form action="{% url 'rent_movie' movie.id %}" method="POST" class="confirm-rent"  data-movie-name="{{ movie.title }}">
                                             {% csrf_token %}
                                             <button type="submit" class="btn btn-filter mt-3">Rent</button>
                                         </form>
@@ -278,6 +280,7 @@
 
 
                 <div class="tab-pane fade {% if request.GET.tab == 'urented'%}show active{% endif %}" id="urented-tab-pane" >
+                    
                     <div class="row">
                         {% for movie in user_rented_movies %}
                         <div class="col-md-3 mb-3"> 
@@ -297,7 +300,7 @@
                                         {% if movie.id in rented_info.all_rented_movies %}
                                         {% if movie.id in rented_info.user_rented_movies %}
                                             <!-- Show Return Button -->
-                                            <form action="{% url 'return_movie' movie.id %}" method="POST">
+                                            <form action="{% url 'return_movie' movie.id %}" method="POST" class="confirm-return"  data-movie-name="{{ movie.title }}">
                                                 {% csrf_token %}
                                                 <button type="submit" class="btn btn-filter mt-3">Return</button>
                                             </form>
@@ -305,7 +308,7 @@
                                             <button class="btn btn-filter mt-3" disabled>Rented</button>
                                         {% endif %}
                                     {% else %}
-                                        <form action="{% url 'rent_movie' movie.id %}" method="POST">
+                                        <form action="{% url 'rent_movie' movie.id %}" method="POST" class="confirm-rent"  data-movie-name="{{ movie.title }}">
                                             {% csrf_token %}
                                             <button type="submit" class="btn btn-filter mt-3">Rent</button>
                                         </form>
@@ -317,7 +320,9 @@
                                 </div>
                             </div>
                         </div>
+                        
                     {% endfor %}
+                    
                 </div>
                 <!-- Pagination -->
                 <nav>
@@ -334,11 +339,35 @@
                             <li class="page-item"><a class="page-link" href="?page={{ user_rented_movies.next_page_number }}&{{ querystring }}">&raquo;</a></li>
                         {% endif %}
                     </ul>
+                    
                 </nav>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<script src="{% static 'js/ctoast.js' %}"></script>
+
+<!-- Modal HTML -->
+<div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content" style="border-radius: 15px;">
+        <div class="modal-header">
+          <h5 class="modal-title" id="confirmModalLabel">Confirm Action</h5>
+          <button type="button" class="btn close" data-bs-dismiss="modal" aria-label="Close" style="font-size: 1.5rem;">&times;</button>
+        </div>
+        <div class="modal-body">
+          Are you sure you want to proceed?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" id="confirmSubmitBtn" class="btn btn-filter">Yes, Confirm</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="{% static 'js/ctoast.js' %}"></script>
+  <script src="{% static 'js/confirm.js' %}"></script>
+  
+    
 {% endblock %}
