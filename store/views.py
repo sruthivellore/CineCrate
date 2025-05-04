@@ -187,7 +187,7 @@ def signup(request):
 
         if not is_strong_password(password):
             return render(request, 'user_auth/signup.html', {
-                'error': "Password must be at least 8 characters long, include one uppercase, one lowercase, one digit, and one special character.",
+                'error': "Password: 8+ characters, uppercase, lowercase, number and special character.",
                 'image_urls': image_urls
             })
 
