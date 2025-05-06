@@ -163,3 +163,21 @@ Here are some snapshots of CineCrate in action:
 | Return Movie (confirmation) |                                                                             | ![](demo_images/11.png) |
 
 ---
+
+### 👩‍💻 Contributions:
+
+We discussed everything in detail as a team and made sure we were familiar with all aspects of the project. Here's how we divided the work:
+
+* **Sruthi Vellore (Me)**:
+
+  * Designed and built the **Movie Catalog TAB & Movie Details** UI and functionality.
+  * Implemented **Login & Signup** form validation and functionality.
+  * Handled **Movie images & Cast data collection**.
+
+* **Priya**:
+
+  * Designed the **Login & Signup** UI.
+  * Implemented the **Confirmation Modal** (UI + functionality) for renting movies.
+  * Handled **Testing** and additional **Movies Data Collection**.
+
+---
