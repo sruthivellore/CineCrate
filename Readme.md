@@ -170,8 +170,8 @@ We discussed everything in detail as a team and made sure we were familiar with 
 
 * **Sruthi Vellore (Me)**:
 
-  * Designed and built the **Movie Catalog TAB & Movie Details** UI and functionality.
-  * Implemented **Login & Signup** form validation and functionality.
+  * Designed and built the **Movie Catalog Tabs & Movie Details** UI and functionality.
+  * Implemented **Login, Signup & Renting** (validation and functionality).
   * Handled **Movie images & Cast data collection**.
 
 * **Priya**:
